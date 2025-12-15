@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<title>Fenix AI</title>
+
+<!-- Telegram WebApp -->
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --glass-bg: rgba(25,25,35,.65);
+  --glass-border: rgba(255,255,255,.08);
+  --accent: #ffb347;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+  background: linear-gradient(180deg,#0f0f14,#1a1a25);
+  color: #fff;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ЭКРАНЫ */
+.screen {
+  position: absolute;
+  inset: 0;
+  padding:
+    calc(env(safe-area-inset-top) + 24px)
+    20px
+    calc(env(safe-area-inset-bottom) + 120px)
+    20px;
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  transition: .35s cubic-bezier(.4,0,.2,1);
+}
+
+.screen.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* ХЕДЕР */
+.header {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+/* КНОПКА */
+.upload-btn {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  padding: 18px;
+  border-radius: 22px;
+  background: linear-gradient(135deg,#ff6a00,#ffb347);
+  border: none;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(255,120,0,.35);
+  transition: transform .15s ease;
+}
+
+.upload-btn:active { transform: scale(.96); }
+
+/* КАРТОЧКИ */
+.card {
+  background: rgba(255,255,255,.04);
+  border-radius: 22px;
+  padding: 18px;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,.06);
+  margin-bottom: 16px;
+}
+
+/* ===== НИЖНЯЯ ПАНЕЛЬ ===== */
+.bottom {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: calc(env(safe-area-inset-bottom) + 16px);
+  height: 72px;
+  border-radius: 28px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(22px) saturate(1.4);
+  -webkit-backdrop-filter: blur(22px) saturate(1.4);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 10px 40px rgba(0,0,0,.5);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 100;
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  opacity: .5;
+  transition: .25s;
+}
+
+.tab span { font-size: 22px; }
+
+.tab.active {
+  opacity: 1;
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+</style>
+</head>
+
+<body>
+
+<!-- ГЛАВНАЯ -->
+<div class="screen active" id="home">
+  <div class="header">🔥 Fenix AI</div>
+  <button class="upload-btn">⬆️ Загрузить видео</button>
+</div>
+
+<!-- ПРОЕКТЫ -->
+<div class="screen" id="projects">
+  <div class="header">📁 Проекты</div>
+  <div class="card">Пока проектов нет</div>
+</div>
+
+<!-- ПРОФИЛЬ -->
+<div class="screen" id="profile">
+  <div class="header">👤 Профиль</div>
+  <div class="card" id="profileCard">Загрузка…</div>
+</div>
+
+<!-- НАСТРОЙКИ -->
+<div class="screen" id="settings">
+  <div class="header">⚙️ Настройки</div>
+  <div class="card">Скоро</div>
+</div>
+
+<!-- НИЖНЯЯ ПАНЕЛЬ -->
+<div class="bottom">
+  <div class="tab active" data-screen="home"><span>🏠</span>Главная</div>
+  <div class="tab" data-screen="projects"><span>📁</span>Проекты</div>
+  <div class="tab" data-screen="profile"><span>👤</span>Профиль</div>
+  <div class="tab" data-screen="settings"><span>⚙️</span>Настройки</div>
+</div>
+
+<script>
+const tg = window.Telegram.WebApp;
+tg.expand();
+
+const tabs = document.querySelectorAll('.tab');
+const screens = document.querySelectorAll('.screen');
+
+tabs.forEach(tab => {
+  tab.onclick = () => {
+    tg.HapticFeedback.impactOccurred("soft");
+
+    tabs.forEach(t => t.classList.remove('active'));
+    screens.forEach(s => s.classList.remove('active'));
+
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.screen).classList.add('active');
+  };
+});
+
+/* ПРОФИЛЬ ИЗ TELEGRAM */
+if (tg.initDataUnsafe?.user) {
+  const u = tg.initDataUnsafe.user;
+  document.getElementById('profileCard').innerHTML = `
+    <strong>${u.first_name || ''} ${u.last_name || ''}</strong><br>
+    @${u.username || '—'}<br><br>
+    💰 Баланс: 0 ₽
+  `;
+}
+</script>
+
+</body>
+</html>
