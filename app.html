@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Fenix AI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{margin:0;font-family:Arial;background:#0b0d12;color:#fff}
+.page{display:none;padding:20px}
+.page.active{display:block}
+.nav{
+  position:fixed;bottom:0;left:0;right:0;
+  display:flex;background:#141720
+}
+.nav button{
+  flex:1;padding:14px;border:none;
+  background:none;color:#fff;font-size:14px
+}
+</style>
+</head>
+<body>
+
+<!-- PAGES -->
+<div id="home" class="page active">
+  <h2>Главная</h2>
+  <button onclick="upload()">Загрузить видео</button>
+</div>
+
+<div id="projects" class="page">
+  <h2>Проекты</h2>
+  <div id="projectList">Пока пусто</div>
+</div>
+
+<div id="profile" class="page">
+  <h2>Профиль</h2>
+  <div id="userInfo"></div>
+</div>
+
+<!-- NAV -->
+<div class="nav">
+  <button onclick="show('home')">🏠 Главная</button>
+  <button onclick="show('projects')">📁 Проекты</button>
+  <button onclick="show('profile')">👤 Профиль</button>
+</div>
+
+<script>
+function show(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+// 🔐 проверка сессии
+fetch("/api/profile")
+  .then(r=>{
+    if(!r.ok) location.href="/";
+    return r.json();
+  })
+  .then(user=>{
+    document.getElementById("userInfo").innerHTML = `
+      <img src="${user.photo}" width="64"><br>
+      ${user.name}<br>
+      Баланс: ${user.balance}
+    `;
+  });
+</script>
+
+</body>
+</html>
