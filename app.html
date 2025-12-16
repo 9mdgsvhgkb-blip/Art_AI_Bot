@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Fenix AI — Clips</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+:root{
+  --bg:#0b0d12;
+  --card:#141720;
+  --accent:#e6c07b;
+  --text:#ffffff;
+  --muted:#9aa0b4;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+}
+
+/* ===== Header ===== */
+.header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 20px;
+}
+
+.profile{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.avatar{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  background:#222;
+  background-size:cover;
+  background-position:center;
+}
+
+.name{
+  font-weight:600;
+  font-size:15px;
+}
+
+/* ===== Main ===== */
+.main{
+  padding:20px;
+}
+
+.card{
+  background:var(--card);
+  border-radius:22px;
+  padding:22px;
+  margin-top:20px;
+}
+
+.title{
+  font-size:22px;
+  font-weight:800;
+}
+
+.subtitle{
+  margin-top:8px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* ===== Upload ===== */
+.upload{
+  margin-top:20px;
+  padding:22px;
+  border-radius:18px;
+  border:2px dashed rgba(255,255,255,.15);
+  text-align:center;
+}
+
+.upload input{display:none}
+
+.upload-btn{
+  margin-top:14px;
+  width:100%;
+  padding:18px;
+  font-size:17px;
+  font-weight:700;
+  border:none;
+  border-radius:18px;
+  cursor:pointer;
+  background:linear-gradient(135deg,#e6c07b,#f3ddb0);
+  color:#1a1408;
+}
+
+.upload-btn:active{transform:scale(.97)}
+
+/* ===== Status ===== */
+.status{
+  margin-top:14px;
+  font-size:14px;
+  color:var(--muted);
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="profile">
+    <div class="avatar" id="avatar"></div>
+    <div class="name" id="username">Пользователь</div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <div class="card">
+    <div class="title">🎬 Создание клипов</div>
+    <div class="subtitle">
+      Загрузи длинное видео — AI автоматически сделает хайлайты с субтитрами
+    </div>
+
+    <div class="upload">
+      <div>Загрузите видео (mp4 / mov)</div>
+
+      <label class="upload-btn">
+        Создать клипы
+        <input type="file" id="videoInput" accept="video/*">
+      </label>
+
+      <div class="status" id="status"></div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+/* ===== AUTH CHECK ===== */
+const tgUser = localStorage.getItem("tg_user");
+if (!tgUser) {
+  window.location.href = "index.html";
+}
+
+const user = JSON.parse(tgUser);
+
+/* ===== Fill profile ===== */
+document.getElementById("username").innerText =
+  user.first_name || "Пользователь";
+
+if (user.photo_url) {
+  document.getElementById("avatar").style.backgroundImage =
+    `url(${user.photo_url})`;
+}
+
+/* ===== Upload ===== */
+const input = document.getElementById("videoInput");
+const status = document.getElementById("status");
+
+input.addEventListener("change", async () => {
+  const file = input.files[0];
+  if (!file) return;
+
+  status.innerText = "⏳ Видео загружается...";
+
+  const formData = new FormData();
+  formData.append("file", file);
+  formData.append("max_highlights", 3);
+
+  try {
+    const res = await fetch("https://fenixaibot.online/upload", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await res.json();
+
+    status.innerText = "🤖 Видео обрабатывается...";
+
+    // тут дальше будет polling /status
+  } catch (e) {
+    status.innerText = "❌ Ошибка загрузки";
+  }
+});
+</script>
+
+</body>
+</html>
