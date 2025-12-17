@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Fenix AI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script async src="https://telegram.org/js/telegram-widget.js?22"></script>
+
+<style>
+:root{
+  --bg:#0b0f1a;
+  --glass:rgba(255,255,255,.08);
+  --accent:#f2c97d;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto;
+  background:linear-gradient(180deg,#0f1426,#06080f);
+  color:#fff;
+  height:100vh;
+}
+
+/* HEADER */
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px;
+}
+.logo{font-size:22px;font-weight:800}
+.avatar{
+  width:36px;height:36px;border-radius:50%;
+  background:#222;display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+.avatar img{width:100%;height:100%;object-fit:cover}
+
+/* MAIN */
+.main{
+  height:calc(100vh - 80px);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:20px;
+}
+
+.upload-btn{
+  padding:18px 26px;
+  font-size:18px;
+  border:none;
+  border-radius:22px;
+  background:linear-gradient(135deg,#f2c97d,#ffe2a8);
+  color:#1a1205;
+  font-weight:700;
+  cursor:pointer;
+}
+.upload-btn:active{transform:scale(.96)}
+
+/* MODAL */
+.modal{
+  position:fixed;inset:0;
+  background:rgba(0,0,0,.6);
+  display:none;align-items:center;justify-content:center;
+  z-index:10;
+}
+.modal.active{display:flex}
+
+.card{
+  width:90%;max-width:380px;
+  background:var(--glass);
+  backdrop-filter:blur(14px);
+  border-radius:26px;
+  padding:26px;
+  text-align:center;
+  animation:pop .25s ease;
+}
+
+@keyframes pop{
+  from{transform:scale(.9);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+
+/* LOADER */
+.loader{
+  width:42px;height:42px;
+  border:4px solid rgba(255,255,255,.2);
+  border-top:4px solid var(--accent);
+  border-radius:50%;
+  animation:spin 1s linear infinite;
+  margin:20px auto;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.hidden{display:none}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <div class="logo">🔥 Fenix AI</div>
+  <div class="avatar" id="avatar">👤</div>
+</div>
+
+<div class="main">
+  <h1>Создай клипы за минуты</h1>
+  <p style="opacity:.6">Загрузи видео — AI сам найдет лучшие моменты</p>
+  <button class="upload-btn" id="openUpload">⬆️ Загрузить видео</button>
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="card">
+
+    <!-- STEP 1: LOGIN -->
+    <div id="stepLogin" class="hidden">
+      <h2>Вход</h2>
+      <p>Авторизуйтесь через Telegram</p>
+      <div id="tgLogin"></div>
+    </div>
+
+    <!-- STEP 2: FILE -->
+    <div id="stepFile" class="hidden">
+      <h2>Загрузка видео</h2>
+      <input type="file" id="fileInput" accept="video/*">
+      <button class="upload-btn" id="startCut" style="margin-top:16px">
+        ✂️ Начать резать
+      </button>
+    </div>
+
+    <!-- STEP 3: LOADING -->
+    <div id="stepLoading" class="hidden">
+      <h2>Видео обрабатывается</h2>
+      <div class="loader"></div>
+      <p style="opacity:.6">AI анализирует видео…</p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const API_BASE = "https://fenixaibot.online";
+
+let user = null;
+let file = null;
+
+/* LOAD USER */
+const saved = localStorage.getItem("tg_user");
+if (saved) {
+  user = JSON.parse(saved);
+  setUserUI();
+}
+
+/* BUTTON */
+document.getElementById("openUpload").onclick = () => {
+  openModal();
+  if (!user) showLogin();
+  else showFile();
+};
+
+/* MODAL */
+function openModal(){
+  document.getElementById("modal").classList.add("active");
+}
+function showLogin(){
+  show("stepLogin");
+  document.getElementById("tgLogin").innerHTML = `
+    <script async
+      src="https://telegram.org/js/telegram-widget.js?22"
+      data-telegram-login="FenixAi_Robot"
+      data-size="large"
+      data-userpic="false"
+      data-onauth="onTelegramAuth">
+    </script>
+  `;
+}
+function showFile(){ show("stepFile"); }
+function showLoading(){ show("stepLoading"); }
+function show(id){
+  ["stepLogin","stepFile","stepLoading"].forEach(s=>{
+    document.getElementById(s).classList.add("hidden");
+  });
+  document.getElementById(id).classList.remove("hidden");
+}
+
+/* TG CALLBACK */
+function onTelegramAuth(u){
+  user = u;
+  localStorage.setItem("tg_user", JSON.stringify(u));
+  setUserUI();
+  showFile();
+}
+
+/* AVATAR */
+function setUserUI(){
+  const av = document.getElementById("avatar");
+  if (user.photo_url) av.innerHTML = `<img src="${user.photo_url}">`;
+}
+
+/* FILE */
+document.getElementById("fileInput").onchange = e => {
+  file = e.target.files[0];
+};
+
+/* UPLOAD */
+document.getElementById("startCut").onclick = async () => {
+  if (!file) return alert("Выберите видео");
+  showLoading();
+
+  const fd = new FormData();
+  fd.append("file", file);
+  fd.append("max_highlights", 3);
+
+  const res = await fetch(`${API_BASE}/upload`, {
+    method:"POST",
+    body:fd
+  });
+
+  const { job_id } = await res.json();
+  pollStatus(job_id);
+};
+
+/* POLL */
+async function pollStatus(job){
+  const t = setInterval(async ()=>{
+    const r = await fetch(`${API_BASE}/status/${job}`);
+    const s = await r.json();
+    if (s.status === "done"){
+      clearInterval(t);
+      alert("🎬 Готово! Клипы можно забирать");
+      document.getElementById("modal").classList.remove("active");
+    }
+  }, 5000);
+}
+</script>
+
+</body>
+</html>
