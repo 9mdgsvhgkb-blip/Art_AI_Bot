@@ -94,10 +94,17 @@ nav button {
   color: var(--muted);
 }
 
+/* === ВАЖНО: КНОПКА ПО ЦЕНТРУ === */
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+}
+
 .actions button {
-  padding: 14px 28px;
+  padding: 20px 52px;
   border-radius: 10px;
-  font-size: 16px;
+  font-size: 20px;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -111,13 +118,6 @@ nav button {
 
 .primary:hover {
   transform: translateY(-2px);
-}
-
-.secondary {
-  margin-left: 16px;
-  background: transparent;
-  border: 1px solid var(--border);
-  color: white;
 }
 
 /* ---------- VIDEO PREVIEW ---------- */
@@ -167,10 +167,6 @@ video {
   transform: translateY(-8px);
   border-color: var(--accent);
   box-shadow: 0 0 40px var(--glow);
-}
-
-.card h3 {
-  margin-bottom: 12px;
 }
 
 .card p {
@@ -224,14 +220,11 @@ video {
     ИИ автоматически находит лучшие моменты и превращает
     твой контент в короткие видео для TikTok, Reels и Shorts.
   </p>
-  <div class="actions">
-  <button class="primary upload-btn">Загрузить видео</button>
-</div>
-.upload-btn {
-  font-size: 18px;
-  padding: 18px 40px;
-}
 
+  <!-- ОДНА КНОПКА ПО ЦЕНТРУ -->
+  <div class="actions">
+    <button class="primary">Загрузить видео</button>
+  </div>
 </section>
 
 <section class="preview reveal">
@@ -242,17 +235,15 @@ video {
 </section>
 
 <section class="features">
-  <div class="card reveal" style="--d:0s">
+  <div class="card reveal">
     <h3>🎯 Умные хайлайты</h3>
     <p>ИИ сам определяет самые вовлекающие моменты.</p>
   </div>
-
-  <div class="card reveal" style="--d:0.1s">
+  <div class="card reveal">
     <h3>⚡ Максимально быстро</h3>
     <p>Создавай десятки клипов за минуты, а не часы.</p>
   </div>
-
-  <div class="card reveal" style="--d:0.2s">
+  <div class="card reveal">
     <h3>📱 Готово для соцсетей</h3>
     <p>Идеальные форматы для TikTok, Reels и Shorts.</p>
   </div>
@@ -265,15 +256,11 @@ video {
 
 <script>
 const reveals = document.querySelectorAll('.reveal');
-
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('active');
-    }
+    if (entry.isIntersecting) entry.target.classList.add('active');
   });
 }, { threshold: 0.2 });
-
 reveals.forEach(el => observer.observe(el));
 </script>
 
