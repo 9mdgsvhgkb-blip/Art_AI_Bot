@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fenix AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Telegram Login Widget -->
+  <script async src="https://telegram.org/js/telegram-widget.js?22"
+    data-telegram-login="FenixAi_Robot"
+    data-size="large"
+    data-radius="10"
+    data-userpic="false"
+    data-onauth="onTelegramAuth(user)"
+    data-request-access="write">
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="logo">🔥 Fenix AI</div>
+
+    <div id="user-info" class="user hidden">
+      <div id="avatar" class="avatar">U</div>
+      <span id="username">User</span>
+    </div>
+  </header>
+
+  <!-- ===== AUTH ===== -->
+  <div id="tg-login" class="auth">
+    <h1>AI клипы из длинных видео</h1>
+    <p>Авто-хайлайты, субтитры, формат TikTok / Reels</p>
+    <!-- Telegram button auto renders here -->
+  </div>
+
+  <!-- ===== MAIN ===== -->
+  <main class="main">
+
+    <!-- Tabs -->
+    <nav class="tabs">
+      <button class="tab active" data-go="upload">Загрузка</button>
+      <button class="tab" data-go="jobs">Процессы</button>
+      <button class="tab" data-go="results">Результаты</button>
+    </nav>
+
+    <!-- Screens -->
+    <section id="upload" class="screen active">
+      <h2>Загрузить видео</h2>
+
+      <label class="upload-box">
+        <input type="file" accept="video/*" hidden />
+        <span>Выбрать видео</span>
+      </label>
+
+      <div class="hint">
+        MP4 / MOV • до 10 GB
+      </div>
+
+      <button class="primary">Начать резать</button>
+    </section>
+
+    <section id="jobs" class="screen">
+      <h2>Обработка</h2>
+      <p>Здесь будет статус: загрузка → анализ → клипы</p>
+    </section>
+
+    <section id="results" class="screen">
+      <h2>Готовые клипы</h2>
+      <p>Список клипов, предпросмотр, скачать</p>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
