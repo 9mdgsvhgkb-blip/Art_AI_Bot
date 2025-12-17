@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Fenix AI — Автоматические видео клипы</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: radial-gradient(circle at top, #1a1a1a, #0b0b0b);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 900px;
+            padding: 40px;
+            text-align: center;
+            animation: fadeIn 1.2s ease;
+        }
+
+        .logo {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            background: linear-gradient(90deg, #ff7a18, #ffb347);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-size: 20px;
+            color: #b3b3b3;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .features {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        .feature {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 20px 24px;
+            width: 220px;
+            transition: 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-6px);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .feature h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            font-size: 14px;
+            color: #cfcfcf;
+        }
+
+        .upload-btn {
+            position: relative;
+            display: inline-block;
+            padding: 18px 48px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #000;
+            background: linear-gradient(90deg, #ff7a18, #ffb347);
+            border-radius: 50px;
+            cursor: pointer;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 40px rgba(255,122,24,0.4);
+        }
+
+        .upload-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 60px rgba(255,122,24,0.7);
+        }
+
+        .upload-btn::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255,255,255,0.2);
+            transform: rotate(25deg);
+            animation: shine 3s infinite;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes shine {
+            0% {
+                transform: translateX(-100%) rotate(25deg);
+            }
+            100% {
+                transform: translateX(100%) rotate(25deg);
+            }
+        }
+
+        footer {
+            margin-top: 60px;
+            font-size: 13px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="logo">FENIX AI</div>
+
+    <div class="subtitle">
+        Превращаем длинные видео в вирусные клипы.<br>
+        Автоматическая нарезка, субтитры и готово к публикации.
+    </div>
+
+    <div class="features">
+        <div class="feature">
+            <h3>🎬 Умная нарезка</h3>
+            <p>AI находит лучшие моменты автоматически</p>
+        </div>
+        <div class="feature">
+            <h3>💬 Авто-субтитры</h3>
+            <p>Точные субтитры с анимацией</p>
+        </div>
+        <div class="feature">
+            <h3>⚡ Быстро</h3>
+            <p>Результат за считанные минуты</p>
+        </div>
+    </div>
+
+    <label class="upload-btn">
+        Загрузить видео
+        <input type="file" accept="video/*">
+    </label>
+
+    <footer>
+        © 2025 Fenix AI. All rights reserved.
+    </footer>
+</div>
+
+</body>
+</html>
