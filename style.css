@@ -50,15 +50,14 @@ nav button {
   border: 1px solid var(--border);
   color: white;
   padding: 10px 18px;
-  border-radius: 14px;
-  font-weight: 600;
+  border-radius: 8px;
   cursor: pointer;
 }
 
 /* ---------- HERO ---------- */
 .hero {
   min-height: 100vh;
-  padding: 70px 10% 50px;
+  padding: 160px 10% 120px;
   background:
     radial-gradient(circle at 30% 20%, #7c7cff22, transparent 40%),
     radial-gradient(circle at 80% 60%, #b28dff22, transparent 40%),
