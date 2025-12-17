@@ -102,7 +102,7 @@ nav button {
   cursor: pointer;
   background: linear-gradient(90deg, #7c7cff, #b28dff);
   box-shadow:
-    0 10px 40px rgba(242,140,56,0.45),
+    0 10px 40px rgba(124,124,255,0.45),
     inset 0 1px 0 rgba(255,255,255,0.4);
   overflow: hidden;
   transition: transform 0.25s ease;
