@@ -93,23 +93,34 @@ nav button {
 
 .shine-btn {
   position: relative;
-  padding: 22px 70px;
-  font-size: 22px;
+  padding: 12px 34px;         
+  font-size: 15px;             
   font-weight: 600;
-  color: #1a1a1a;
+  color: white;
   border: none;
   border-radius: 999px;
   cursor: pointer;
-  background: linear-gradient(90deg, #f28c38, #f6b35f, #f28c38);
+
+  background: linear-gradient(
+    90deg,
+    #7c7cff,
+    #b28dff,
+    #7c7cff
+  );
+
   box-shadow:
-    0 10px 40px rgba(242,140,56,0.45),
-    inset 0 1px 0 rgba(255,255,255,0.4);
+    0 8px 28px rgba(124,124,255,0.45),
+    inset 0 1px 0 rgba(255,255,255,0.25);
+
   overflow: hidden;
-  transition: transform 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .shine-btn:hover {
   transform: translateY(-2px);
+  box-shadow:
+    0 12px 40px rgba(124,124,255,0.6),
+    inset 0 1px 0 rgba(255,255,255,0.35);
 }
 
 .shine-btn .shine {
@@ -121,11 +132,11 @@ nav button {
   background: linear-gradient(
     120deg,
     rgba(255,255,255,0) 0%,
-    rgba(255,255,255,0.6) 50%,
+    rgba(255,255,255,0.45) 50%,
     rgba(255,255,255,0) 100%
   );
   transform: skewX(-20deg);
-  animation: shineMove 2.8s infinite;
+  animation: shineMove 3s infinite;
 }
 
 @keyframes shineMove {
