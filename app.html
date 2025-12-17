@@ -1,0 +1,9 @@
+<script>
+const tgUser = localStorage.getItem("tg_user");
+if (!tgUser) {
+  // если нет авторизации → редирект на страницу входа
+  window.location.href = "index.html";
+} else {
+  console.log("Добро пожаловать", JSON.parse(tgUser));
+}
+</script>
