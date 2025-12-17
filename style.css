@@ -1,0 +1,226 @@
+:root {
+  --bg: #0b0d12;
+  --bg-soft: #12141c;
+  --card: rgba(255,255,255,0.05);
+  --border: rgba(255,255,255,0.08);
+  --text: #ffffff;
+  --muted: #a1a1aa;
+  --accent: #7c7cff;
+  --glow: #7c7cff55;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* ---------- NAV ---------- */
+nav {
+  position: fixed;
+  width: 100%;
+  padding: 20px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(11,13,18,0.6);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  z-index: 100;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+nav button {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  min-height: 100vh;
+  padding: 160px 10% 120px;
+  background:
+    radial-gradient(circle at 30% 20%, #7c7cff22, transparent 40%),
+    radial-gradient(circle at 80% 60%, #b28dff22, transparent 40%),
+    var(--bg);
+}
+
+.hero h1 {
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1.1;
+  max-width: 900px;
+}
+
+.hero h1 span {
+  background: linear-gradient(90deg, #7c7cff, #b28dff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  margin: 28px 0 48px;
+  font-size: 18px;
+  max-width: 540px;
+  color: var(--muted);
+}
+
+/* ---------- SHINY BUTTON ---------- */
+.actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 56px;
+}
+
+.shine-btn {
+  position: relative;
+  padding: 22px 70px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  background: linear-gradient(90deg, #f28c38, #f6b35f, #f28c38);
+  box-shadow:
+    0 10px 40px rgba(242,140,56,0.45),
+    inset 0 1px 0 rgba(255,255,255,0.4);
+  overflow: hidden;
+  transition: transform 0.25s ease;
+}
+
+.shine-btn:hover {
+  transform: translateY(-2px);
+}
+
+.shine-btn .shine {
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.6) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  transform: skewX(-20deg);
+  animation: shineMove 2.8s infinite;
+}
+
+@keyframes shineMove {
+  0% { left: -60%; }
+  60% { left: 120%; }
+  100% { left: 120%; }
+}
+
+/* ---------- VIDEO PREVIEW ---------- */
+.preview {
+  padding: 120px 10%;
+  text-align: center;
+}
+
+.preview h2 {
+  font-size: 48px;
+  margin-bottom: 40px;
+}
+
+.video-box {
+  max-width: 960px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  background: black;
+  border: 1px solid var(--border);
+  box-shadow: 0 40px 120px rgba(124,124,255,0.18);
+}
+
+video {
+  width: 100%;
+  display: block;
+}
+
+/* ---------- FEATURES ---------- */
+.features {
+  padding: 120px 10%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 36px;
+  backdrop-filter: blur(14px);
+  transition: 0.4s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent);
+  box-shadow: 0 0 40px var(--glow);
+}
+
+.card p {
+  color: var(--muted);
+}
+
+/* ---------- CTA ---------- */
+.cta {
+  padding: 120px 10%;
+  text-align: center;
+  background: var(--bg-soft);
+}
+
+.cta h2 {
+  font-size: 44px;
+  margin-bottom: 28px;
+}
+
+.primary {
+  background: var(--accent);
+  color: black;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* ---------- SCROLL ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.9s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  .hero h1 { font-size: 42px; }
+  .features { grid-template-columns: 1fr; }
+}
