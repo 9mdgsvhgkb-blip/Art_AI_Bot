@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Fenix AI — Автоматические видео клипы</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===== НЕ ТРОГАЕМ ДИЗАЙН ===== */
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
+        html, body { width:100%; height:100%; overflow-x:hidden; background:#0b0b0b; }
+        body { min-height:100svh; color:#fff; overflow-y:auto; -webkit-overflow-scrolling:touch; padding-top:env(safe-area-inset-top); padding-bottom:env(safe-area-inset-bottom); }
+        .container { min-height:100svh; max-width:900px; margin:0 auto; padding:40px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; background:radial-gradient(circle at top,#1a1a1a,#0b0b0b); animation:fadeIn 1.2s ease; }
+        .logo { font-size:48px; font-weight:700; letter-spacing:2px; background:linear-gradient(90deg,#ff7a18,#ffb347); -webkit-background-clip:text; -webkit-text-fill-color:transparent; margin-bottom:20px; }
+        .subtitle { font-size:20px; color:#b3b3b3; margin-bottom:32px; line-height:1.6; }
+        .upload-wrapper { margin-bottom:48px; }
+        .upload-btn { position:relative; display:inline-block; padding:18px 48px; font-size:18px; font-weight:600; color:#000; background:linear-gradient(90deg,#ff7a18,#ffb347); border-radius:50px; cursor:pointer; overflow:hidden; box-shadow:0 0 40px rgba(255,122,24,0.4); }
+        .features { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; margin-bottom:50px; }
+        .feature { background: rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:20px 24px; width:220px; }
+        footer { margin-top:60px; font-size:13px; color:#777; }
+        @keyframes fadeIn { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="logo">FENIX AI</div>
+
+    <div class="subtitle">
+        Превращаем длинные видео в вирусные клипы.<br>
+        Автоматическая нарезка, субтитры и готово к публикации.
+    </div>
+
+    <div class="upload-wrapper">
+        <div class="upload-btn" id="openLogin">
+            Войти через Telegram
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature">🎬 Умная нарезка</div>
+        <div class="feature">💬 Авто-субтитры</div>
+        <div class="feature">⚡ Быстро</div>
+    </div>
+
+    <footer>© 2025 Fenix AI</footer>
+</div>
+
+<!-- MODAL Telegram Login -->
+<div class="modal-overlay" id="loginModal" style="position:fixed; inset:0; background:rgba(0,0,0,0.7); display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:0.25s ease; z-index:999;">
+    <div class="modal" style="background:#121212; border-radius:20px; padding:32px; width:320px; text-align:center; transform:scale(0.95); transition:0.25s ease;">
+        <h2>Вход в Fenix AI</h2>
+        <p>Авторизуйтесь через Telegram</p>
+
+        <!-- Telegram Login Widget -->
+        <script async src="https://telegram.org/js/telegram-widget.js?22"
+            data-telegram-login="FenixAi_Robot"
+            data-size="large"
+            data-userpic="true"
+            data-lang="ru"
+            data-request-access="write"
+            data-auth-url="https://fenixaibot.online/auth">
+        </script>
+    </div>
+</div>
+
+<script>
+const openBtn = document.getElementById('openLogin');
+const modal = document.getElementById('loginModal');
+
+openBtn.onclick = () => modal.style.opacity = 1, modal.style.pointerEvents = 'all';
+modal.onclick = e => e.target === modal && (modal.style.opacity = 0, modal.style.pointerEvents = 'none');
+</script>
+
+</body>
+</html>
