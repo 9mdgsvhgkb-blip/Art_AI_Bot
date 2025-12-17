@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Fenix AI — Дашборд</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+body{background:#0b0b0b;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px}
+.logo{font-size:48px;font-weight:700;background:linear-gradient(90deg,#ff7a18,#ffb347);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:20px}
+.upload-btn{padding:18px 48px;font-size:18px;font-weight:600;color:#000;background:linear-gradient(90deg,#ff7a18,#ffb347);border-radius:50px;cursor:pointer}
+</style>
+</head>
+<body>
+
+<div class="logo">FENIX AI</div>
+<div>Загрузите видео</div>
+
+<input type="file" id="videoFile" hidden>
+<div class="upload-btn" onclick="videoFile.click()">Загрузить видео</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const token = params.get("token");
+
+if (!token) {
+    location.href = "/";
+}
+
+localStorage.setItem("fenix_token", token);
+
+const videoFile = document.getElementById("videoFile");
+videoFile.onchange = async () => {
+    const formData = new FormData();
+    formData.append("file", videoFile.files[0]);
+    formData.append("max_highlights", 3);
+
+    const res = await fetch("https://fenixaibot.online/upload", {
+        method: "POST",
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("fenix_token")
+        },
+        body: formData
+    });
+
+    const data = await res.json();
+    alert("Job ID: " + data.job_id);
+};
+</script>
+
+</body>
+</html>
