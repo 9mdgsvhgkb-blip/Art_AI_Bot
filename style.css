@@ -93,14 +93,14 @@ nav button {
 
 .shine-btn {
   position: relative;
-  padding: 22px 70px;
-  font-size: 22px;
+  padding: 10px 16px;
+  font-size: 13px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: #ffffff;
   border: none;
   border-radius: 999px;
   cursor: pointer;
-  background: linear-gradient(90deg, #f28c38, #f6b35f, #f28c38);
+  background: linear-gradient(90deg, #7c7cff, #b28dff);
   box-shadow:
     0 10px 40px rgba(242,140,56,0.45),
     inset 0 1px 0 rgba(255,255,255,0.4);
