@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FenixAI - превращай длинные видео в вирусные клипы</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="logo">Fenix<span>AI</span></div>
+  <button>Войти</button>
+</nav>
+
+<section class="hero reveal">
+  <h1>
+    Превращай длинные видео<br>
+    в <span>вирусные клипы</span>
+  </h1>
+  <p>
+    ИИ автоматически находит лучшие моменты и превращает
+    твой контент в короткие видео для TikTok, Reels и Shorts.
+  </p>
+
+  <div class="actions">
+    <button class="shine-btn">
+      Загрузить видео
+      <span class="shine"></span>
+    </button>
+  </div>
+</section>
+
+<section class="preview reveal">
+  <h2>Из длинных видео - в клипы</h2>
+  <div class="video-box">
+    <video src="demo.mp4" autoplay muted loop playsinline></video>
+  </div>
+</section>
+
+<section class="features">
+  <div class="card reveal">
+    <h3>🎯 Умные хайлайты</h3>
+    <p>ИИ сам определяет самые вовлекающие моменты.</p>
+  </div>
+  <div class="card reveal">
+    <h3>⚡ Максимально быстро</h3>
+    <p>Создавай десятки клипов за минуты, а не часы.</p>
+  </div>
+  <div class="card reveal">
+    <h3>📱 Готово для соцсетей</h3>
+    <p>Идеальные форматы для TikTok, Reels и Shorts.</p>
+  </div>
+</section>
+
+<section class="cta reveal">
+  <h2>Начни создавать вирусные клипы уже сегодня</h2>
+  <button class="primary">Присоединиться к листу ожидания</button>
+</section>
+
+<script>
+const reveals = document.querySelectorAll('.reveal');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+    }
+  });
+}, { threshold: 0.2 });
+
+reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
