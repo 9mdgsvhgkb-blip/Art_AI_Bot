@@ -252,3 +252,18 @@ video {
   display: block;
   object-fit: cover;
 }
+
+@media (max-width: 600px) {
+  .preview {
+    padding: 80px 16px;
+  }
+
+  .video-box {
+    max-width: 100%;
+  }
+
+  .video-box img {
+    object-fit: contain;
+    height: auto;
+  }
+}
