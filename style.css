@@ -236,3 +236,13 @@ video {
   width: auto;
   display: block;
 }
+
+.logo-text {
+  font-size: 20px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.logo-text span {
+  color: var(--accent);
+}
