@@ -57,7 +57,7 @@ nav button {
 /* ---------- HERO ---------- */
 .hero {
   min-height: 100vh;
-  padding: 140px 10% 100px;
+  padding: 120px 10% 90px;
   background:
     radial-gradient(circle at 30% 20%, #7c7cff22, transparent 40%),
     radial-gradient(circle at 80% 60%, #b28dff22, transparent 40%),
