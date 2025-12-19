@@ -224,15 +224,3 @@ video {
   .hero h1 { font-size: 42px; }
   .features { grid-template-columns: 1fr; }
 }
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo img {
-  height: 34px;      
-  width: auto;
-  display: block;
-}
