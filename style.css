@@ -246,3 +246,9 @@ video {
 .logo-text span {
   color: var(--accent);
 }
+
+.video-box img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
