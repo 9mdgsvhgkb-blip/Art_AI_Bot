@@ -1,0 +1,40 @@
+:root {  
+  --bg: #483D8B;  
+  --bg-soft: #483D8B;  
+  --card: rgba(255,255,255,0.05);  
+  --border: rgba(255,255,255,0.08);  
+  --text: #ffffff;  
+  --muted: #c0c0ff;  
+  --accent: #7c7cff;  
+  --glow: #7c7cff55;  
+}  
+  
+/* Основной фон */  
+body {  
+  font-family: Inter, sans-serif;  
+  background: var(--bg);  
+  color: var(--text);  
+  overflow-x: hidden;  
+}  
+  
+/* Фон всех блоков */  
+.auth-container {  
+  background: var(--bg-soft);  
+}  
+  
+/* Кнопки */  
+.primary {  
+  background: var(--accent);  
+  color: #000;  
+}  
+  
+/* Плейсхолдеры */  
+input::placeholder {  
+  color: var(--muted);  
+}  
+  
+/* Карточки, если есть */  
+.card {  
+  background: var(--card);  
+  border: 1px solid var(--border);  
+}  
