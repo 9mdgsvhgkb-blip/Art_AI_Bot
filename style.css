@@ -136,7 +136,7 @@ nav button {
 
 /* ---------- VIDEO PREVIEW ---------- */
 .preview {
-  padding: 120px 10%;
+  padding: 80px 10%;
   text-align: center;
 }
 
@@ -162,7 +162,7 @@ video {
 
 /* ---------- FEATURES ---------- */
 .features {
-  padding: 120px 10%;
+  padding: 80px 10%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
@@ -189,7 +189,7 @@ video {
 
 /* ---------- CTA ---------- */
 .cta {
-  padding: 120px 10%;
+  padding: 80px 10%;
   text-align: center;
   background: var(--bg-soft);
 }
