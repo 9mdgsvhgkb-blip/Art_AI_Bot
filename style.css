@@ -32,9 +32,9 @@ body {
   transform: translateY(-50%);
   width: 40px;
   height: 40px;
-  border: 2px solid #00aaff;
-  border-radius: 50%;
   background-color: #1e1e1e;
+  border: 2px solid #fff;
+  border-radius: 8px;
   padding: 6px;
   display: flex;
   flex-direction: column;
@@ -48,7 +48,7 @@ body {
 .hamburger span {
   width: 20px;
   height: 2px;
-  background-color: #00aaff;
+  background-color: #fff;
   border-radius: 2px;
   transition: all 0.3s ease;
 }
@@ -132,19 +132,19 @@ body {
 
 .block {
   border: 2px solid #333;
-  padding: 20px;
+  padding: 25px;
   border-radius: 12px;
   background-color: #1a1a1a;
-  width: 320px;
+  width: 380px;
 }
 
 input[type="text"] {
   width: 100%;
-  padding: 12px;
+  padding: 14px;
   border: 1px solid #555;
   border-radius: 8px;
   margin-bottom: 15px;
-  font-size: 14px;
+  font-size: 15px;
   background-color: #121212;
   color: #fff;
 }
@@ -155,11 +155,11 @@ input[type="text"]::placeholder {
 
 button {
   width: 100%;
-  padding: 12px;
+  padding: 14px;
   background-color: #00aaff;
   border: none;
   color: white;
-  font-size: 16px;
+  font-size: 17px;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.2s;
