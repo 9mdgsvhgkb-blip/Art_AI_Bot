@@ -231,7 +231,7 @@ button:hover {
   align-items: center;
   gap: 8px;
   background: #121212;
-  padding: 6px 10px;   /* чуть больше padding для нормальной высоты */
+  padding: 1px 18px;   /* чуть больше padding для нормальной высоты */
   border-radius: 6px;
   border: 1px solid #555;
 }
@@ -247,7 +247,7 @@ button:hover {
   flex: 1;
   background: transparent;
   border: none;
-  color: #fff;
+  color: #888;
   font-size: 15px;
   padding: 0;           /* убираем лишние отступы внутри input */
   outline: none;
