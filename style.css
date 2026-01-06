@@ -11,6 +11,7 @@ body {
   overflow-x: hidden;
 }
 
+/* Хэдер */
 .header {
   position: fixed;
   top: 0;
@@ -25,8 +26,9 @@ body {
   padding: 0 20px;
 }
 
+/* Гамбургер */
 .hamburger {
-  position: fixed;       
+  position: fixed;
   left: 20px;
   top: 20px;
   width: 30px;
@@ -53,13 +55,7 @@ body {
   transition: none;
 }
 
-.hamburger.open span:nth-child(1),
-.hamburger.open span:nth-child(2),
-.hamburger.open span:nth-child(3) {
-  transform: none;
-  opacity: 1;
-}
-
+/* Логотип и название */
 .header .center {
   display: flex;
   align-items: center;
@@ -77,21 +73,63 @@ body {
   margin: 0;
 }
 
+/* Overlay для затемнения */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3); /* затемнение 30% */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 1000;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Панель слева с GPU-ускоренной анимацией */
 .sidebar {
   position: fixed;
   top: 0;
-  left: -70%;
+  left: 0;
   width: 70%;
   height: 100%;
   background-color: #1e1e1e;
-  padding-top: 0px;       
+  padding-top: 70px;
   box-shadow: 2px 0 8px rgba(0,0,0,0.5);
-  transition: left 0.3s ease;
+  transform: translateX(-100%); /* скрыта слева */
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1); /* плавная анимация */
   z-index: 1001;
 }
 
 .sidebar.active {
-  left: 0;
+  transform: translateX(0); /* выдвинута */
+}
+
+.sidebar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  border-bottom: 1px solid #333;
+}
+
+.sidebar-logo {
+  width: 40px;
+  height: auto;
+  object-fit: contain;
+}
+
+.close-btn {
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
 }
 
 .sidebar ul {
@@ -105,7 +143,6 @@ body {
   margin-bottom: 20px;
 }
 
-/* Чистые текстовые ссылки с иконками, без полосок */
 .sidebar a {
   display: flex;
   align-items: center;
@@ -113,36 +150,33 @@ body {
   text-decoration: none;
   color: #fff;
   font-size: 18px;
-  padding: 6px 10px;       
+  padding: 6px 10px;
   background-color: transparent;
   border-radius: 0;
   user-select: none;
   outline: none;
 }
 
-.sidebar a:hover {
-  color: #00aaff;
-}
-
+.sidebar a:hover,
 .sidebar a:focus,
 .sidebar a:active {
-  background-color: transparent;
   color: #00aaff;
 }
 
+/* Иконки меню */
 .menu-icon {
   width: 20px;
   height: 20px;
   object-fit: contain;
 }
 
+/* Основной контент */
 .main-content {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   padding-top: 130px;
   min-height: calc(100vh - 50px);
-  transition: margin-left 0.3s ease;
 }
 
 .block {
@@ -182,45 +216,4 @@ button {
 
 button:hover {
   background-color: #0088cc;
-}
-
-/* Верх панели: логотип и крестик */
-.sidebar-top {
-  display: flex;
-  justify-content: space-between; /* логотип слева, крестик справа */
-  align-items: center;
-  padding: 20px 15px 15px 15px;
-  border-bottom: 1px solid #333; /* отделение от меню */
-}
-
-.sidebar-logo {
-  width: 40px;
-  height: auto;
-  object-fit: contain;
-}
-
-.close-btn {
-  font-size: 24px;
-  color: #fff;
-  cursor: pointer;
-  user-select: none;
-}
-
-#overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.2); /* чуть затемняет фон */
-  backdrop-filter: blur(3px);        /* лёгкий blur */
-  opacity: 0;
-  pointer-events: none;               /* клики проходят, когда неактивно */
-  transition: opacity 0.3s ease;
-  z-index: 1000;                      /* под панелью, выше контента */
-}
-
-#overlay.active {
-  opacity: 1;
-  pointer-events: auto;               /* блокирует клики по фону */
 }
