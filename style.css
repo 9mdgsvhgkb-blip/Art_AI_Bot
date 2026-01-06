@@ -238,9 +238,9 @@ button:hover {
 
 .youtube-input svg {
   flex-shrink: 0;
-  width: 24px;
-  height: 24px;
-  color: #ff0000;
+  width: 14px;
+  height: 14px;
+  color: #fff;
 }
 
 .youtube-input input {
