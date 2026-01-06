@@ -1,0 +1,211 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, Arial, sans-serif;
+    background: #0e0e11;
+    color: #ffffff;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 16px 32px;
+    background: #15151c;
+    border-bottom: 1px solid #26262e;
+}
+
+/* Гамбургер */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    cursor: pointer;
+    margin-right: 16px;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Лого */
+.logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.logo-text {
+    font-size: 30px;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 0.25px;
+}
+
+/* MAIN */
+main {
+    padding: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    margin-bottom: 16px;
+}
+
+/* UPLOAD */
+.upload-box {
+    background: #15151c;
+    border: 2px dashed #2e2e38;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.upload-box h2 {
+    margin-top: 0;
+}
+
+.upload-box input {
+    display: none;
+}
+
+.upload-box label {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 14px 28px;
+    background: #5b5bff;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* JOBS */
+.jobs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.job-card {
+    background: #15151c;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #26262e;
+}
+
+.job-card h3 {
+    margin: 0 0 8px;
+    font-size: 14px;
+    color: #aaaaaa;
+}
+
+/* STATUS */
+.status {
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.status.processing {
+    color: #ffaa00;
+}
+
+.status.done {
+    color: #00ff88;
+}
+
+/* PROGRESS */
+.progress {
+    height: 6px;
+    background: #26262e;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress div {
+    height: 100%;
+    background: #5b5bff;
+    width: 0%;
+}
+
+/* BUTTON */
+button {
+    margin-top: 14px;
+    background: #2e2e38;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #3a3a48;
+}
+
+/* БОКОВАЯ ПАНЕЛЬ */
+.side-panel {
+    position: fixed;
+    top: 0;
+    left: -70%;
+    width: 70%;
+    height: 100vh;
+    background: #15151c;
+    border-right: 1px solid #26262e;
+    padding: 32px 16px;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.3);
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.side-panel.open {
+    left: 0;
+}
+
+.panel-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 40px;
+}
+
+.panel-menu a {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 0;
+    font-weight: 500;
+}
+
+.panel-menu a:hover {
+    color: #5b5bff;
+}
