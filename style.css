@@ -227,32 +227,31 @@ button:hover {
 }
 
 .youtube-input {
-  display: inline-flex;        /* чтобы размер по содержимому */
-  align-items: center;         /* вертикальное выравнивание */
-  gap: 6px;                    /* расстояние между SVG и текстом */
-  background: #121212;         
-  border: 1px solid #555;
+  display: flex;
+  align-items: center;  /* выравниваем SVG и текст по центру */
+  gap: 8px;
+  background: #121212;
+  padding: 4px 8px;     /* внутренние отступы контейнера */
   border-radius: 6px;
-  padding: 4px 8px;            /* делаем поле компактным */
-  font-size: 14px;
-  line-height: 1;
-  max-width: 400px;            /* максимальная ширина поля */
+  border: 1px solid #555;
 }
 
 .youtube-input svg {
-  width: 18px;
-  height: 18px;
-  color: currentColor;         /* тот же цвет, что текст */
-  flex-shrink: 0;              /* не сжимать */
+  width: 24px;
+  height: 24px;
+  color: currentColor;  /* цвет совпадает с текстом */
+  flex-shrink: 0;
 }
 
 .youtube-input input {
-  flex: 1;                     /* занимает оставшееся место */
-  background: transparent;     
-  border: none;                
-  color: #fff;                 
-  font-size: 14px;             
-  line-height: 1.2;            
-  padding: 2px 0;              /* компактная высота */
-  outline: none;               
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 15px;
+  height: 24px;         /* фиксированная высота */
+  line-height: 24px;    /* выравниваем текст вертикально */
+  padding: 0;           /* убираем внутренние отступы */
+  outline: none;
+  vertical-align: middle;
 }
