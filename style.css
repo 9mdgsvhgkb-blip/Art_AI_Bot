@@ -256,4 +256,5 @@ button:hover {
   padding: 2px 0;        /* уменьшает вертикальную высоту */
   outline: none;
   padding-top: 15px;
+  vertical-align: middle;
 }
