@@ -231,7 +231,7 @@ button:hover {
   align-items: center;
   gap: 8px;
   background: #121212;
-  padding: 1px 18px;   /* чуть больше padding для нормальной высоты */
+  padding: 20px 28px;   /* чуть больше padding для нормальной высоты */
   border-radius: 6px;
   border: 1px solid #555;
 }
