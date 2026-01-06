@@ -229,3 +229,9 @@ button {
 button:hover {
   background-color: #0088cc;
 }
+
+.menu-icon {
+  width: 20px;
+  height: 20px;
+  color: #fff;
+}
