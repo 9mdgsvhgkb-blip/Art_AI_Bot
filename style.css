@@ -234,7 +234,7 @@ button:hover {
   gap: 8px;
   background: #121212;
   padding: 4px 8px;       /* высота контролируется здесь */
-  border-radius: 6px;
+  border-radius: 7px;
   border: 1px solid #555;
 }
 
