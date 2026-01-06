@@ -44,6 +44,7 @@ body {
   box-shadow: 0 2px 6px rgba(0,0,0,0.3);
   z-index: 1002;
 }
+
 .hamburger.open {
   background-color: #00aaff;
   border-color: #00ffff;  
@@ -55,13 +56,6 @@ body {
   background-color: #aaa;
   border-radius: 2px;
   transition: none;
-}
-
-.hamburger.open span:nth-child(1),
-.hamburger.open span:nth-child(2),
-.hamburger.open span:nth-child(3) {
-  transform: none;
-  opacity: 1;
 }
 
 .header .center {
@@ -113,29 +107,32 @@ body {
   margin-bottom: 20px;
 }
 
+/* Чистые ссылки в боковой панели с серой подсветкой */
 .sidebar a {
   display: flex;
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  color: #fff;
+  color: #fff;             
   font-size: 18px;
-  padding: 6px 10px;       
+  padding: 6px 10px;
   background-color: transparent;
   border-radius: 0;
   user-select: none;
   outline: none;
+  transition: background-color 0.2s, border-radius 0.2s;
 }
 
 .sidebar a:hover {
-  color: #00aaff;
+  background-color: rgba(200, 200, 200, 0.2); /* светло-серый фон */
+  border-radius: 8px;                          /* немного закруглено */
+  color: inherit;                              /* текст не меняется */
 }
 
-.sidebar a:focus,
 .sidebar a.active {
-  background-color: rgba(200, 200, 200, 0.2);
-  color: inherit;
-  border-radius: 6px;
+  background-color: rgba(200, 200, 200, 0.2); /* светло-серый фон */
+  border-radius: 8px;                          /* немного закруглено */
+  color: inherit;                              /* текст не меняется */
 }
 
 .menu-icon {
@@ -230,24 +227,4 @@ button {
 
 button:hover {
   background-color: #0088cc;
-}
-
-.menu-icon {
-  width: 20px;
-  height: 20px;
-  color: #fff;
-}
-
-.sidebar a:hover {
-  color: #inherit;
-  background-color: rgba(200, 200, 200, 0.2);
-  border-radius: 4px;
-}
-
-.sidebar a.active {
-  color: inherit;
-  background-color: rgba(200, 200, 200, 0.2);
-  border-radius: 6px solid rgba(200, 200, 200, 0.5);
-  padding: 12px 9px;
-  box-shadow: none;
 }
