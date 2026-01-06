@@ -248,4 +248,5 @@ button:hover {
   color: #00aaff;
   background-color: rgba(0, 170, 255, 0.2);
   border-radius: 4px;
+  padding: 12px 20px;
 }
