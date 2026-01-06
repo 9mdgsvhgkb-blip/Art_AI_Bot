@@ -71,13 +71,13 @@ body {
 }
 
 .header .center img {
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   object-fit: contain;
 }
 
 .header .center h1 {
-  font-size: 16px;
+  font-size: 18px;
   margin: 0;
 }
 
