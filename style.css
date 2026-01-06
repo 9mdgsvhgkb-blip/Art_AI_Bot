@@ -244,9 +244,17 @@ button:hover {
 }
 
 .youtube-input input {
+  flex: 1;
   background: transparent;
   border: none;
   color: #888;
-  font-size: 15px;
+  font-size: 14px;
+  padding: 0;           /* убираем padding */
+  line-height: 1.2;     /* сжимаем текст по вертикали */
+  height: 24px;         /* фиксированная высота input */
   outline: none;
+}
+
+.youtube-input input::placeholder {
+  color: #888;
 }
