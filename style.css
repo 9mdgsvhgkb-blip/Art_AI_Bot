@@ -124,7 +124,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding-top: 80px; /* чтобы контент не перекрывал хэдер */
+  padding-top: 120px; /* чтобы контент не перекрывал хэдер */
   transition: margin-left 0.3s ease;
 }
 
