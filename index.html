@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FenixAI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Хэдер -->
+    <header class="header">
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <img src="logo.png" alt="FenixAI Logo" class="logo">
+        <h1>FenixAI</h1>
+    </header>
+
+    <!-- Боковая панель -->
+    <nav class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">Видео</a></li>
+            <li><a href="#">Настройки</a></li>
+            <li><a href="#">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <!-- Контент -->
+    <div class="container">
+        <div class="block">
+            <input type="text" placeholder="Вставьте ссылку YouTube">
+            <button>Загрузить видео</button>
+        </div>
+    </div>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const sidebar = document.getElementById('sidebar');
+
+        hamburger.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
