@@ -17,3 +17,11 @@ overlay.addEventListener('click', () => {
   sidebar.classList.remove('active');
   overlay.classList.remove('active');
 });
+const menuLinks = document.querySelectorAll('.sidebar a');
+
+menuLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    menuLinks.forEach(l => l.classList.remove('active')); // убираем активность со всех
+    link.classList.add('active'); // добавляем текущей
+  });
+});
