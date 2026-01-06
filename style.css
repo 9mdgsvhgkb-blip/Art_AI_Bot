@@ -1,0 +1,139 @@
+/* Основные стили */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Хэдер */
+.header {
+    display: flex;
+    align-items: center;
+    background-color: #1e1e1e;
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    gap: 15px;
+}
+
+/* Гамбургер */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 2px;
+}
+
+/* Логотип и название */
+.logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.header h1 {
+    font-size: 20px;
+    margin: 0;
+}
+
+/* Боковая панель */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -60%;
+    width: 60%;
+    height: 100%;
+    background-color: #1e1e1e;
+    padding: 60px 20px 20px 20px; /* Отступ сверху под хэдер */
+    box-shadow: 2px 0 8px rgba(0,0,0,0.5);
+    transition: left 0.3s ease;
+    z-index: 999;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    margin-bottom: 20px;
+}
+
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.2s;
+}
+
+.sidebar a:hover {
+    color: #00aaff;
+}
+
+/* Контент */
+.container {
+    margin-top: 80px; /* Чтобы не перекрывался хэдером */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 80px);
+}
+
+/* Блок с полем и кнопкой */
+.block {
+    border: 2px solid #333;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #1a1a1a;
+    width: 320px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #555;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    background-color: #121212;
+    color: #fff;
+}
+
+input[type="text"]::placeholder {
+    color: #888;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #00aaff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #0088cc;
+}
