@@ -247,6 +247,6 @@ button:hover {
 .sidebar a.active {
   color: #00aaff;
   background-color: rgba(0, 170, 255, 0.2);
-  border-radius: 4px;
+  border-radius: 6px;
   padding: 12px 20px;
 }
