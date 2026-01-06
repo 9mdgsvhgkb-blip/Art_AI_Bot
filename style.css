@@ -130,9 +130,12 @@ body {
 }
 
 .sidebar a.active {
-  background-color: rgba(200, 200, 200, 0.2); /* светло-серый фон */
-  border-radius: 8px;                          /* немного закруглено */
-  color: inherit;                              /* текст не меняется */
+  color: inherit;
+  background-color: rgba(200, 200, 200, 0.15);
+  border-radius: 10px;
+  outline: 3px solid rgba(200, 200, 200, 0.5);
+  outline-offset: -3px;
+  padding: 6px 10px;
 }
 
 .menu-icon {
