@@ -26,10 +26,9 @@ body {
 }
 
 .hamburger {
-  position: absolute;
+  position: fixed;        /* фиксируем, чтобы всегда был сверху */
   left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 20px;
   width: 30px;
   height: 30px;
   background-color: #1e1e1e;
@@ -38,32 +37,28 @@ body {
   padding: 5px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center; /* полоски по центру */
   align-items: center;
-  gap: 3px;
+  gap: 2px;               /* полоски ближе друг к другу */
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  z-index: 1001;
+  z-index: 1002;          /* выше панели */
 }
 
 .hamburger span {
   width: 14px;
-  height: 2px;
-  background-color: #aaa;
+  height: 1.5px;          /* тоньше полоски */
+  background-color: #aaa;  /* серый цвет */
   border-radius: 2px;
-  transition: all 0.3s ease;
+  transition: none;        /* убираем анимацию крестика */
 }
 
-.hamburger.open span:nth-child(1) {
-  transform: rotate(45deg) translate(4px, 4px);
-}
-
-.hamburger.open span:nth-child(2) {
-  opacity: 0;
-}
-
+/* убираем крестик полностью */
+.hamburger.open span:nth-child(1),
+.hamburger.open span:nth-child(2),
 .hamburger.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(4px, -4px);
+  transform: none;
+  opacity: 1;
 }
 
 .header .center {
@@ -90,10 +85,10 @@ body {
   width: 60%;
   height: 100%;
   background-color: #1e1e1e;
-  padding: 60px 20px 20px 20px;
+  padding-top: 70px;       /* учитываем хедер */
   box-shadow: 2px 0 8px rgba(0,0,0,0.5);
   transition: left 0.3s ease;
-  z-index: 999;
+  z-index: 1001;
 }
 
 .sidebar.active {
@@ -125,10 +120,11 @@ body {
   align-items: flex-start;
   padding-top: 110px;
   min-height: calc(100vh - 50px);
+  transition: margin-left 0.3s ease;
 }
 
 .sidebar.active ~ .main-content {
-  margin-left: 60%;
+  margin-left: 60%;       /* сдвигаем контент при открытой панели */
 }
 
 .block {
