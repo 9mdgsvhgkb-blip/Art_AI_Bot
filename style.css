@@ -228,10 +228,10 @@ button:hover {
 
 .youtube-input {
   display: flex;
-  align-items: center;  /* выравниваем SVG и текст по центру */
+  align-items: center;
   gap: 8px;
   background: #121212;
-  padding: 4px 8px;     /* внутренние отступы контейнера */
+  padding: 6px 10px;   /* чуть больше padding для нормальной высоты */
   border-radius: 6px;
   border: 1px solid #555;
 }
@@ -239,7 +239,7 @@ button:hover {
 .youtube-input svg {
   width: 24px;
   height: 24px;
-  color: currentColor;  /* цвет совпадает с текстом */
+  color: currentColor;
   flex-shrink: 0;
 }
 
@@ -249,9 +249,6 @@ button:hover {
   border: none;
   color: #fff;
   font-size: 15px;
-  height: 24px;         /* фиксированная высота */
-  line-height: 24px;    /* выравниваем текст вертикально */
-  padding: 0;           /* убираем внутренние отступы */
+  padding: 0;           /* убираем лишние отступы внутри input */
   outline: none;
-  vertical-align: middle;
 }
