@@ -110,9 +110,8 @@ body {
 }
 
 .sidebar a {
-  width: 100%;
   box-sizing: border-box;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 10px;
   text-decoration: none;
@@ -130,6 +129,7 @@ body {
 .sidebar a.active {
   background-color: rgba(200, 200, 200, 0.2); 
   border-radius: 8px;   
+  width: auto;
   color: inherit;      
 }
 .menu-icon {
