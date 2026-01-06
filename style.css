@@ -6,7 +6,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #111111; /* почти черный фон сайта */
+  background-color: #111111;
   color: #fff;
   overflow-x: hidden;
 }
@@ -45,7 +45,7 @@ body {
   z-index: 1002;
 }
 .hamburger.open {
-  background-color: #00aaff; /* подсветка фона при открытии */
+  background-color: #00aaff;
   border-color: #00ffff;  
 }
 
@@ -81,7 +81,6 @@ body {
   margin: 0;
 }
 
-/* ПАНЕЛЬ СЛЕВА */
 .sidebar {
   position: fixed;
   top: 0;
@@ -91,7 +90,7 @@ body {
   background-color: #1e1e1e;
   padding-top: 0;
   box-shadow: 2px 0 8px rgba(0,0,0,0.5);
-  transform: translateX(-100%); /* скрыта слева */
+  transform: translateX(-100%);
   transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1001;
   will-change: transform;
@@ -100,7 +99,7 @@ body {
 }
 
 .sidebar.active {
-  transform: translateX(0); /* выдвигается */
+  transform: translateX(0);
 }
 
 .sidebar ul {
@@ -114,7 +113,6 @@ body {
   margin-bottom: 20px;
 }
 
-/* Чистые текстовые ссылки с иконками, без полосок */
 .sidebar a {
   display: flex;
   align-items: center;
@@ -129,20 +127,29 @@ body {
   outline: none;
 }
 
+.sidebar a:hover {
+  color: #00aaff;
+}
+
+.sidebar a:focus,
+.sidebar a.active {
+  background-color: rgba(200, 200, 200, 0.2);
+  color: inherit;
+  border-radius: 6px;
+}
+
 .menu-icon {
   width: 20px;
   height: 20px;
   object-fit: contain;
-  color: #fff;
 }
 
-/* Верх панели: логотип и крестик */
 .sidebar-top {
   display: flex;
-  justify-content: space-between; /* логотип слева, крестик справа */
+  justify-content: space-between;
   align-items: center;
   padding: 20px 15px 15px 15px;
-  border-bottom: 1px solid #333; /* отделение от меню */
+  border-bottom: 1px solid #333;
 }
 
 .sidebar-logo {
@@ -158,19 +165,18 @@ body {
   user-select: none;
 }
 
-/* Overlay для затемнения и блюра */
 #overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.2); /* лёгкое затемнение */
-  backdrop-filter: blur(3px);        /* блюр */
+  background-color: rgba(0,0,0,0.2);
+  backdrop-filter: blur(3px);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s ease;
-  z-index: 1000; /* под панелью */
+  z-index: 1000;
 }
 
 #overlay.active {
@@ -178,7 +184,6 @@ body {
   pointer-events: auto;
 }
 
-/* Контент */
 .main-content {
   display: flex;
   justify-content: center;
@@ -227,16 +232,20 @@ button:hover {
   background-color: #0088cc;
 }
 
-/* Hover — подсветка при наведении */
-.sidebar a:hover {
-  color: inherit; /* текст остаётся белым */
-  background-color: rgba(200, 200, 200, 0.1); /* лёгкий серый фон */
-  border-radius: 4px; /* минимальные скругления */
+.menu-icon {
+  width: 20px;
+  height: 20px;
+  color: #fff;
 }
 
-/* Активная кнопка — при клике или выбранной странице */
+.sidebar a:hover {
+  color: #00aaff;
+  background-color: rgba(0, 170, 255, 0.1);
+  border-radius: 4px;
+}
+
 .sidebar a.active {
-  color: inherit; /* текст остаётся белым */
-  background-color: rgba(200, 200, 200, 0.2); /* чуть ярче серый фон */
-  border-radius: 4px; /* минимальные скругления */
+  color: #00aaff;
+  background-color: rgba(0, 170, 255, 0.2);
+  border-radius: 4px;
 }
