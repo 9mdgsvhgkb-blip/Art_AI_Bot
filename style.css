@@ -11,25 +11,27 @@ body {
   overflow-x: hidden;
 }
 
+/* ===== HEADER ===== */
 .header {
-  position: relative;
-  z-index: 1003;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   height: 70px;
-  background-color: #1e1e1e
+  background-color: #1e1e1e;
+  z-index: 1003;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 20px;
 }
 
+/* ===== HAMBURGER ===== */
 .hamburger {
-  position: fixed;   
-  pointer-events: auto;
+  position: absolute;
   left: 20px;
-  top: 20px;
+  top: 50%;
+  transform: translateY(-50%);
   width: 30px;
   height: 30px;
   background-color: #1e1e1e;
@@ -42,13 +44,7 @@ body {
   align-items: center;
   gap: 2px;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  z-index: 9999;
-}
-
-.hamburger.open {
-  background-color: #00aaff;
-  border-color: #00ffff;  
+  z-index: 1004;
 }
 
 .hamburger span {
@@ -56,9 +52,9 @@ body {
   height: 1.5px;
   background-color: #aaa;
   border-radius: 2px;
-  transition: none;
 }
 
+/* ===== HEADER CENTER ===== */
 .header .center {
   display: flex;
   align-items: center;
@@ -68,14 +64,13 @@ body {
 .header .center img {
   width: 35px;
   height: 35px;
-  object-fit: contain;
 }
 
 .header .center h1 {
   font-size: 18px;
-  margin: 0;
 }
 
+/* ===== SIDEBAR ===== */
 .sidebar {
   position: fixed;
   top: 0;
@@ -83,12 +78,9 @@ body {
   width: 70%;
   height: 100%;
   background-color: #1e1e1e;
-  padding-top: 0;
-  box-shadow: 2px 0 8px rgba(0,0,0,0.5);
   transform: translateX(-100%);
-  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 1001;
-  will-change: transform;
+  transition: transform 0.25s ease;
+  z-index: 1002;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   pointer-events: none;
@@ -101,9 +93,7 @@ body {
 
 .sidebar ul {
   list-style: none;
-  padding-left: 20px;
-  margin: 0;
-  padding-top: 30px;
+  padding: 30px 0 0 20px;
 }
 
 .sidebar li {
@@ -111,68 +101,55 @@ body {
 }
 
 .sidebar a {
-  box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  text-decoration: none;
-  color: #fff;             
-  font-size: 18px;
-  padding: 13px 6px;
-  background-color: transparent;
-  border-radius: 8px;  
-  user-select: none;
-  outline: none;
-  transition: background-color 0.2s, border-radius 0.2s;
   width: 88%;
+  padding: 13px 6px;
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
 }
 
 .sidebar a:hover,
 .sidebar a.active {
-  background-color: rgba(200, 200, 200, 0.2); 
-  border-radius: 8px;   
-  color: inherit;      
+  background-color: rgba(200, 200, 200, 0.2);
 }
+
 .menu-icon {
   width: 20px;
   height: 20px;
-  object-fit: contain;
 }
 
+/* ===== SIDEBAR TOP ===== */
 .sidebar-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 15px 15px 15px;
+  padding: 20px 15px;
   border-bottom: 1px solid #333;
 }
 
 .sidebar-logo {
   width: 40px;
-  height: auto;
-  object-fit: contain;
 }
 
 .close-btn {
   font-size: 24px;
-  color: #fff;
   cursor: pointer;
-  user-select: none;
 }
 
+/* ===== OVERLAY ===== */
 #overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.2);
+  inset: 0;
+  background: rgba(0,0,0,0.2);
   backdrop-filter: blur(3px);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s ease;
-  pointer-events: none !important;
-  z-index: 1000;
+  z-index: 1001;
 }
 
 #overlay.active {
@@ -180,83 +157,63 @@ body {
   pointer-events: auto;
 }
 
+/* ===== MAIN ===== */
 .main-content {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
   padding-top: 130px;
-  min-height: calc(100vh - 50px);
-  transition: margin-left 0.3s ease;
 }
 
 .block {
-  border: 2px solid #333;
-  padding: 22px;
-  border-radius: 12px;
-  background-color: #1a1a1a;
   width: 350px;
+  background: #1a1a1a;
+  border: 2px solid #333;
+  border-radius: 12px;
+  padding: 22px;
 }
 
-input[type="text"] {
-  width: 100%;
-  padding: 13px;
-  border: 1px solid #555;
-  border-radius: 8px;
-  margin-bottom: 14px;
-  font-size: 15px;
-  background-color: #121212;
-  color: #fff;
-}
-
-input[type="text"]::placeholder {
-  color: #888;
-}
-
-button {
-  width: 100%;
-  padding: 13px;
-  background-color: #fff;
-  border: none;
-  color: #000;
-  font-size: 16px;
-  margin-top: 20px;
-  border-radius: 8px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-button:hover {
-  background-color: #eee;
-}
-
+/* ===== YOUTUBE INPUT ===== */
 .youtube-input {
   display: flex;
   align-items: center;
   gap: 8px;
   background: #121212;
-  padding: 4px 8px;       /* высота контролируется здесь */
-  border-radius: 7px;
   border: 1px solid #555;
+  border-radius: 7px;
+  padding: 6px 10px;
 }
 
 .youtube-input svg {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   color: #888;
   flex-shrink: 0;
 }
 
 .youtube-input input {
   flex: 1;
-  vertical-align: middle;
   background: transparent;
   border: none;
-  color: #888;           /* цвет текста "Введите ссылку YouTube" */
-  font-size: 15px;
-  line-height: 1;        /* чтобы текст не растягивался */
-  padding: 2px 0;        /* уменьшает вертикальную высоту */
   outline: none;
-  padding-top: 15px;
-  vertical-align: middle;
+  color: #888;
+  font-size: 15px;
+  line-height: 1.2;
+}
+
+/* ===== BUTTON ===== */
+button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 13px;
+  background: #fff;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #eee;
 }
