@@ -230,10 +230,10 @@ button:hover {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: #121212;
+  background: #888;
   padding: 4px 8px;       /* высота контролируется здесь */
   border-radius: 6px;
-  border: 1px solid #555;
+  border: 1px solid #888;
 }
 
 .youtube-input svg {
@@ -252,5 +252,5 @@ button:hover {
   line-height: 1;        /* чтобы текст не растягивался */
   padding: 2px 0;        /* уменьшает вертикальную высоту */
   outline: none;
-  padding-top: 5px;
+  padding-top: 18px;
 }
