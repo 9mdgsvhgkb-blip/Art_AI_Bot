@@ -134,9 +134,10 @@ body {
 }
 
 .sidebar a:focus,
-.sidebar a:active {
-  background-color: transparent;
-  color: #00aaff;
+.sidebar a.active {
+  background-color: rgba(200, 200, 200, 0.2); /* светло-серый фон */
+  color: inherit; /* текст остаётся белым */
+  border-radius: 6px; /* мягкие скругления углов */
 }
 
 .menu-icon {
