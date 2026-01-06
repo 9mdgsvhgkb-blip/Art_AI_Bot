@@ -90,10 +90,12 @@ body {
   will-change: transform;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
+  pointer-events: none;
 }
 
 .sidebar.active {
   transform: translateX(0);
+  pointer-events: auto;
 }
 
 .sidebar ul {
