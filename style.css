@@ -112,21 +112,21 @@ body {
   text-decoration: none;
   color: #fff;
   font-size: 18px;
-  padding: 6px 10px;       /* отступы для читаемости */
-  background-color: transparent; /* прозрачный фон */
-  border-radius: 0;          /* без скруглений */
-  user-select: none;         /* нельзя выделять текст */
-  outline: none;             /* убираем рамку при клике */
+  padding: 6px 10px;       
+  background-color: transparent;
+  border-radius: 0;
+  user-select: none;
+  outline: none;
 }
 
 .sidebar a:hover {
-  color: #00aaff;            /* подсветка текста при наведении */
+  color: #00aaff;
 }
 
 .sidebar a:focus,
 .sidebar a:active {
-  background-color: transparent; /* фон при клике прозрачный */
-  color: #00aaff;               /* цвет текста при клике */
+  background-color: transparent;
+  color: #00aaff;
 }
 
 .menu-icon {
@@ -181,4 +181,26 @@ button {
 
 button:hover {
   background-color: #0088cc;
+}
+
+/* Верх панели: логотип и крестик */
+.sidebar-top {
+  display: flex;
+  justify-content: space-between; /* логотип слева, крестик справа */
+  align-items: center;
+  padding: 10px 15px;
+  border-bottom: 1px solid #333; /* отделение от меню */
+}
+
+.sidebar-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.close-btn {
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
 }
