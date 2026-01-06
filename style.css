@@ -44,6 +44,10 @@ body {
   box-shadow: 0 2px 6px rgba(0,0,0,0.3);
   z-index: 1002;
 }
+.hamburger.open {
+  background-color: #00aaff; /* подсветка фона */
+  border-color: #00ffff;  
+}
 
 .hamburger span {
   width: 14px;
