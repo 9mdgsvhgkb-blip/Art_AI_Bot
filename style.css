@@ -106,7 +106,7 @@ body {
 
 .sidebar a {
   display: block;
-  width: calc (100% - 20px);
+  width: calc (100% - 30px);
   padding: 12px 10px;       
   background-color: #2a2a2a; 
   border: 1px solid #555;
