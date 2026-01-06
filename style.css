@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: #111111;
@@ -20,7 +26,7 @@ body {
 }
 
 .hamburger {
-  position: fixed;
+  position: fixed;       
   left: 20px;
   top: 20px;
   width: 30px;
@@ -38,7 +44,6 @@ body {
   box-shadow: 0 2px 6px rgba(0,0,0,0.3);
   z-index: 1002;
 }
-
 .hamburger.open {
   background-color: #00aaff;
   border-color: #00ffff;  
@@ -49,6 +54,14 @@ body {
   height: 1.5px;
   background-color: #aaa;
   border-radius: 2px;
+  transition: none;
+}
+
+.hamburger.open span:nth-child(1),
+.hamburger.open span:nth-child(2),
+.hamburger.open span:nth-child(3) {
+  transform: none;
+  opacity: 1;
 }
 
 .header .center {
@@ -68,7 +81,6 @@ body {
   margin: 0;
 }
 
-/* ПАНЕЛЬ СЛЕВА */
 .sidebar {
   position: fixed;
   top: 0;
@@ -76,10 +88,12 @@ body {
   width: 70%;
   height: 100%;
   background-color: #1e1e1e;
+  padding-top: 0;
   box-shadow: 2px 0 8px rgba(0,0,0,0.5);
   transform: translateX(-100%);
   transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1001;
+  will-change: transform;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
 }
@@ -91,8 +105,8 @@ body {
 .sidebar ul {
   list-style: none;
   padding-left: 20px;
-  padding-top: 30px;
   margin: 0;
+  padding-top: 30px;
 }
 
 .sidebar li {
@@ -106,40 +120,30 @@ body {
   text-decoration: none;
   color: #fff;
   font-size: 18px;
-  padding: 6px 10px;
+  padding: 6px 10px;       
   background-color: transparent;
   border-radius: 0;
-  outline: none;
   user-select: none;
-  border: 2px solid transparent; /* рамка для active */
-  transition: background-color 0.2s, border-color 0.2s;
+  outline: none;
 }
 
-/* Hover */
 .sidebar a:hover {
-  background-color: rgba(200, 200, 200, 0.2);
-  border-radius: 10px; /* сильнее закругление при hover */
-  border-color: rgba(200,200,200,0.5); /* тонкая сероватая рамка */
-  color: inherit; /* текст не меняется */
+  color: #00aaff;
 }
 
-/* Active / выделенная кнопка */
+.sidebar a:focus,
 .sidebar a.active {
   background-color: rgba(200, 200, 200, 0.2);
-  border-radius: 12px; /* сильное закругление */
-  border: 4px solid rgba(200,200,200,0.5); /* толстая сероватая рамка */
-  color: inherit; /* текст не меняется */
+  color: inherit;
+  border-radius: 6px;
 }
 
-/* Иконки меню */
 .menu-icon {
   width: 20px;
   height: 20px;
   object-fit: contain;
-  color: #fff;
 }
 
-/* Верх панели: логотип и крестик */
 .sidebar-top {
   display: flex;
   justify-content: space-between;
@@ -161,7 +165,6 @@ body {
   user-select: none;
 }
 
-/* Overlay */
 #overlay {
   position: fixed;
   top: 0;
@@ -181,7 +184,6 @@ body {
   pointer-events: auto;
 }
 
-/* Контент */
 .main-content {
   display: flex;
   justify-content: center;
@@ -228,4 +230,24 @@ button {
 
 button:hover {
   background-color: #0088cc;
+}
+
+.menu-icon {
+  width: 20px;
+  height: 20px;
+  color: #fff;
+}
+
+.sidebar a:hover {
+  color: #inherit;
+  background-color: rgba(200, 200, 200, 0.2);
+  border-radius: 4px;
+}
+
+.sidebar a.active {
+  color: inherit;
+  background-color: rgba(200, 200, 200, 0.2);
+  border-radius: 6px solid rgba(200, 200, 200, 0.5);
+  padding: 12px 9px;
+  box-shadow: none;
 }
