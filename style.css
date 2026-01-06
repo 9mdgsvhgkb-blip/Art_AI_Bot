@@ -1,145 +1,162 @@
-/* Основные стили */
+/* Общие стили */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #121212;
-    color: #fff;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* отключаем горизонтальный скролл */
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #fff;
+  overflow-x: hidden;
 }
 
 /* Хэдер */
 .header {
-    display: flex;
-    align-items: center;
-    background-color: #1e1e1e;
-    padding: 15px 20px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    gap: 15px;
-    height: 60px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: #1e1e1e;
+  padding: 0 20px;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 
 /* Гамбургер */
 .hamburger {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 25px;
-    height: 20px;
-    cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .hamburger span {
-    display: block;
-    height: 3px;
-    background-color: #fff;
-    border-radius: 2px;
+  display: block;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Анимация крестика */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* Логотип и название */
 .logo {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
 }
 
 .header h1 {
-    font-size: 20px;
-    margin: 0;
+  font-size: 20px;
 }
 
 /* Боковая панель */
 .sidebar {
-    position: fixed;
-    top: 0;
-    left: -60%;
-    width: 60%;
-    height: 100%;
-    background-color: #1e1e1e;
-    padding: 60px 20px 20px 20px; /* Отступ сверху под хэдер */
-    box-shadow: 2px 0 8px rgba(0,0,0,0.5);
-    transition: left 0.3s ease;
-    z-index: 999;
+  position: fixed;
+  top: 0;
+  left: -60%;
+  width: 60%;
+  height: 100%;
+  background-color: #1e1e1e;
+  padding: 60px 20px 20px 20px;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.5);
+  transition: left 0.3s ease;
+  z-index: 999;
 }
 
 .sidebar.active {
-    left: 0;
+  left: 0;
 }
 
 .sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
 }
 
 .sidebar li {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .sidebar a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    transition: color 0.2s;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.2s;
 }
 
 .sidebar a:hover {
-    color: #00aaff;
+  color: #00aaff;
 }
 
 /* Контент */
 .main-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding-top: 80px; /* Чтобы контент не перекрывался хэдером */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 80px; /* чтобы не перекрывал хэдер */
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar.active ~ .main-content {
+  margin-left: 60%;
 }
 
 /* Блок с полем и кнопкой */
 .block {
-    border: 2px solid #333;
-    padding: 20px;
-    border-radius: 12px;
-    background-color: #1a1a1a;
-    width: 320px;
+  border: 2px solid #333;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #1a1a1a;
+  width: 320px;
 }
 
 input[type="text"] {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #555;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    font-size: 14px;
-    background-color: #121212;
-    color: #fff;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #555;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  background-color: #121212;
+  color: #fff;
 }
 
 input[type="text"]::placeholder {
-    color: #888;
+  color: #888;
 }
 
 button {
-    width: 100%;
-    padding: 12px;
-    background-color: #00aaff;
-    border: none;
-    color: white;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.2s;
+  width: 100%;
+  padding: 12px;
+  background-color: #00aaff;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
 button:hover {
-    background-color: #0088cc;
+  background-color: #0088cc;
 }
