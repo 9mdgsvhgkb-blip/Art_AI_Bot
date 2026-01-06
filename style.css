@@ -12,13 +12,13 @@ body {
 }
 
 .header {
-  position: fixed;
+  position: relative;
+  z-index: 1003;
   top: 0;
   left: 0;
   right: 0;
   height: 70px;
-  background-color: #1e1e1e;
-  z-index: 1000;
+  background-color: #1e1e1e
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,7 +26,8 @@ body {
 }
 
 .hamburger {
-  position: fixed;       
+  position: fixed;   
+  pointer-events: auto;
   left: 20px;
   top: 20px;
   width: 30px;
