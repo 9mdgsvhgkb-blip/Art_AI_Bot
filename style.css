@@ -45,7 +45,7 @@ body {
   z-index: 1002;
 }
 .hamburger.open {
-  background-color: #00aaff; /* подсветка фона */
+  background-color: #00aaff; /* подсветка фона при открытии */
   border-color: #00ffff;  
 }
 
@@ -129,21 +129,11 @@ body {
   outline: none;
 }
 
-.sidebar a:hover {
-  color: #00aaff;
-}
-
-.sidebar a:focus,
-.sidebar a.active {
-  background-color: rgba(200, 200, 200, 0.2); /* светло-серый фон */
-  color: inherit; /* текст остаётся белым */
-  border-radius: 6px; /* мягкие скругления углов */
-}
-
 .menu-icon {
   width: 20px;
   height: 20px;
   object-fit: contain;
+  color: #fff;
 }
 
 /* Верх панели: логотип и крестик */
@@ -237,22 +227,16 @@ button:hover {
   background-color: #0088cc;
 }
 
-.menu-icon {
-  width: 20px;
-  height: 20px;
-  color: #fff;
-}
-
-/* Состояние при наведении */
+/* Hover — подсветка при наведении */
 .sidebar a:hover {
-  color: #00aaff;
-  background-color: rgba(0, 170, 255, 0.1); /* лёгкий подсвеченный фон */
+  color: inherit; /* текст остаётся белым */
+  background-color: rgba(200, 200, 200, 0.1); /* лёгкий серый фон */
   border-radius: 4px; /* минимальные скругления */
 }
 
-/* Состояние при клике или активной странице */
+/* Активная кнопка — при клике или выбранной странице */
 .sidebar a.active {
-  color: #00aaff; 
-  background-color: rgba(0, 170, 255, 0.2); /* чуть ярче, чем hover */
+  color: inherit; /* текст остаётся белым */
+  background-color: rgba(200, 200, 200, 0.2); /* чуть ярче серый фон */
   border-radius: 4px; /* минимальные скругления */
 }
