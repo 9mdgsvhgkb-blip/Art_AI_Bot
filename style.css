@@ -6,7 +6,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #111111;
+  background-color: #0a0a0a; /* почти черный фон сайта */
   color: #fff;
   overflow-x: hidden;
 }
@@ -104,7 +104,7 @@ body {
   margin-bottom: 20px;
 }
 
-/* Меню с текстом и иконками */
+/* Чистые текстовые ссылки с иконками, без полосок */
 .sidebar a {
   display: flex;
   align-items: center;
@@ -112,22 +112,21 @@ body {
   text-decoration: none;
   color: #fff;
   font-size: 18px;
-  padding: 12px 10px;
-  border-radius: 8px;
-  background-color: #2a2a2a;
-  transition: color 0.2s;
-  user-select: none;       /* нельзя выделять текст */
-  outline: none;           /* убираем рамку при фокусе */
+  padding: 12px 10px;       /* отступы для читаемости */
+  background-color: transparent; /* прозрачный фон */
+  border-radius: 0;          /* без скруглений */
+  user-select: none;         /* нельзя выделять текст */
+  outline: none;             /* убираем рамку при клике */
 }
 
 .sidebar a:hover {
-  color: #00aaff;          /* подсветка текста при hover */
+  color: #00aaff;            /* подсветка текста при наведении */
 }
 
 .sidebar a:focus,
 .sidebar a:active {
-  background-color: #2a2a2a;  /* фон не меняется при клике */
-  color: #fff;                /* текст остаётся белым */
+  background-color: transparent; /* фон при клике прозрачный */
+  color: #00aaff;               /* цвет текста при клике */
 }
 
 .menu-icon {
