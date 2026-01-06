@@ -240,7 +240,7 @@ button:hover {
 
 .sidebar a:hover {
   color: #00aaff;
-  background-color: rgba(0, 170, 255, 0.1);
+  background-color: rgba(200, 200, 200, 0.2);
   border-radius: 4px;
 }
 
@@ -248,6 +248,6 @@ button:hover {
   color: inherit;
   background-color: rgba(200, 200, 200, 0.2);
   border-radius: 6px solid rgba(200, 200, 200, 0.5);
-  padding: 6px 10px;
+  padding: 6px 15px;
   box-shadow: none;
 }
