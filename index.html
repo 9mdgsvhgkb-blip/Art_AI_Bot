@@ -20,8 +20,15 @@
     </div>
   </header>
 
-  <!-- Боковая панель с текстом и иконками -->
+  <!-- Боковая панель -->
   <nav class="sidebar" id="sidebar">
+    <!-- Верхний блок с логотипом и крестиком -->
+    <div class="sidebar-top">
+      <img src="logo.png" alt="FenixAI Logo" class="sidebar-logo">
+      <div class="close-btn" id="closeSidebar">&times;</div>
+    </div>
+
+    <!-- Меню -->
     <ul>
       <li>
         <a href="#">
@@ -61,10 +68,16 @@
   <script>
     const hamburger = document.getElementById('hamburger');
     const sidebar = document.getElementById('sidebar');
+    const closeBtn = document.getElementById('closeSidebar');
 
     hamburger.addEventListener('click', () => {
       sidebar.classList.toggle('active');
       hamburger.classList.toggle('open');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      sidebar.classList.remove('active');
+      hamburger.classList.remove('open');
     });
   </script>
 </body>
