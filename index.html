@@ -90,15 +90,18 @@
     </ul>
   </nav>
 
-  <!-- Контент -->
-  <main class="main-content">
-    <div class="block">
-      <input type="text" placeholder="Вставьте ссылку YouTube">
-      <button>Загрузить видео</button>
-    </div>
-  </main>
+<main class="main-content">
+  <div class="block">
+    <div class="youtube-input">
+      <!-- Иконка YouTube -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="red" width="24" height="24">
+        <path d="M23.498 6.186a2.999 2.999 0 0 0-2.114-2.12C19.509 3.5 12 3.5 12 3.5s-7.509 0-9.384.566a2.999 2.999 0 0 0-2.114 2.12A31.65 31.65 0 0 0 0 12a31.65 31.65 0 0 0 .502 5.814 2.999 2.999 0 0 0 2.114 2.12C4.491 20.5 12 20.5 12 20.5s7.509 0 9.384-.566a2.999 2.999 0 0 0 2.114-2.12A31.65 31.65 0 0 0 24 12a31.65 31.65 0 0 0-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+      </svg>
 
-  <!-- Подключение внешнего JS -->
-  <script src="script.js"></script>
-</body>
-</html>
+      <!-- Поле ввода -->
+      <input type="text" placeholder="Введите ссылку YouTube">
+    </div>
+
+    <button>Загрузить видео</button>
+  </div>
+</main>
