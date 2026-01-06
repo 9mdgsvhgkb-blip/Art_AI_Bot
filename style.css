@@ -123,13 +123,13 @@ body {
   user-select: none;
   outline: none;
   transition: background-color 0.2s, border-radius 0.2s;
+  width: 80%;
 }
 
 .sidebar a:hover,
 .sidebar a.active {
   background-color: rgba(200, 200, 200, 0.2); 
   border-radius: 8px;   
-  width: auto;
   color: inherit;      
 }
 .menu-icon {
