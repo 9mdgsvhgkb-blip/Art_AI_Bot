@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Overlay для blur -->
+  <div id="overlay"></div>
+
   <!-- Хэдер -->
   <header class="header">
     <div class="hamburger" id="hamburger">
@@ -25,7 +28,7 @@
     <!-- Верхний блок с логотипом и крестиком -->
     <div class="sidebar-top">
       <img src="logo.png" alt="FenixAI Logo" class="sidebar-logo">
-      <div class="close-btn" id="closeSidebar">&times;</div>
+      <div class="close-btn" id="closeBtn">&times;</div>
     </div>
 
     <!-- Меню -->
@@ -65,20 +68,7 @@
     </div>
   </main>
 
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const sidebar = document.getElementById('sidebar');
-    const closeBtn = document.getElementById('closeSidebar');
-
-    hamburger.addEventListener('click', () => {
-      sidebar.classList.toggle('active');
-      hamburger.classList.toggle('open');
-    });
-
-    closeBtn.addEventListener('click', () => {
-      sidebar.classList.remove('active');
-      hamburger.classList.remove('open');
-    });
-  </script>
+  <!-- Подключение внешнего JS -->
+  <script src="script.js"></script>
 </body>
 </html>
