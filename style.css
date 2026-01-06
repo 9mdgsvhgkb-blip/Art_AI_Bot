@@ -205,3 +205,22 @@ button:hover {
   cursor: pointer;
   user-select: none;
 }
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.2); /* чуть затемняет фон */
+  backdrop-filter: blur(3px);        /* лёгкий blur */
+  opacity: 0;
+  pointer-events: none;               /* клики проходят, когда неактивно */
+  transition: opacity 0.3s ease;
+  z-index: 1000;                      /* под панелью, выше контента */
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: auto;               /* блокирует клики по фону */
+}
