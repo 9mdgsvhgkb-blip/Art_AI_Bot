@@ -112,7 +112,7 @@ body {
   text-decoration: none;
   color: #fff;
   font-size: 18px;
-  padding: 12px 10px;       /* отступы для читаемости */
+  padding: 8px 10px;       /* отступы для читаемости */
   background-color: transparent; /* прозрачный фон */
   border-radius: 0;          /* без скруглений */
   user-select: none;         /* нельзя выделять текст */
