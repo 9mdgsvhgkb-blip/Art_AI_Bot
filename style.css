@@ -233,20 +233,20 @@ button:hover {
   background: #121212;
   padding: 8px 12px;
   border-radius: 6px;
-  border: 1px solid #fff;
+  border: 1px solid #888;
 }
 
 .youtube-input svg {
   flex-shrink: 0;
   width: 19px;
   height: 19px;
-  color: #fff;
+  color: #888;
 }
 
 .youtube-input input {
   background: transparent;
   border: none;
-  color: #fff;
+  color: #888;
   font-size: 15px;
   outline: none;
 }
