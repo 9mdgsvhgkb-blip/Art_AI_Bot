@@ -245,6 +245,7 @@ button:hover {
 
 .youtube-input input {
   flex: 1;
+  vertical-align: middle;
   background: transparent;
   border: none;
   color: #888;           /* цвет текста "Введите ссылку YouTube" */
