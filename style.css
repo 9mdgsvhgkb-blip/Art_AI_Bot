@@ -241,3 +241,17 @@ button:hover {
   height: 20px;
   color: #fff;
 }
+
+/* Состояние при наведении */
+.sidebar a:hover {
+  color: #00aaff;
+  background-color: rgba(0, 170, 255, 0.1); /* лёгкий подсвеченный фон */
+  border-radius: 4px; /* минимальные скругления */
+}
+
+/* Состояние при клике или активной странице */
+.sidebar a.active {
+  color: #00aaff; 
+  background-color: rgba(0, 170, 255, 0.2); /* чуть ярче, чем hover */
+  border-radius: 4px; /* минимальные скругления */
+}
