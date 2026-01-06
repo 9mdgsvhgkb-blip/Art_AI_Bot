@@ -91,6 +91,8 @@ body {
   transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1001;
   will-change: transform;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 .sidebar.active {
