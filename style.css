@@ -249,6 +249,8 @@ button:hover {
   border: none;
   color: #888;
   font-size: 15px;
+  line-height: 1;        /* убираем лишнее пространство */
+  padding: 4px 0
   padding: 0;           /* убираем лишние отступы внутри input */
   outline: none;
 }
