@@ -225,3 +225,29 @@ button {
 button:hover {
   background-color: #0088cc;
 }
+
+.youtube-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #121212;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #555;
+}
+
+.youtube-input svg {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  color: #ff0000;
+}
+
+.youtube-input input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+}
