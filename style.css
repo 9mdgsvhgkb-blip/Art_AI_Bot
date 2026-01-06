@@ -109,6 +109,8 @@ body {
 
 /* Чистые ссылки в боковой панели с серой подсветкой */
 .sidebar a {
+  width: 100%;
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   gap: 10px;
