@@ -131,11 +131,10 @@ body {
 
 .sidebar a.active {
   color: inherit;
-  background-color: rgba(200, 200, 200, 0.15);
-  border-radius: 10px;
-  outline: 3px solid rgba(200, 200, 200, 0.5);
-  outline-offset: -3px;
-  padding: 6px 10px;
+  background-color: rgba(200, 200, 200, 0.2);
+  border-radius: 6px solid rgba(200, 200, 200, 0.5);
+  padding: 18px 9px;
+  box-shadow: none;
 }
 
 .menu-icon {
