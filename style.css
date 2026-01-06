@@ -122,10 +122,9 @@ body {
 .main-content {
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding-top: 120px; /* чтобы контент не перекрывал хэдер */
-  transition: margin-left 0.3s ease;
+  align-items: flex-start;
+  padding-top: 50px; /* расстояние от хедера */
+  min-height: calc(100vh - 50px);
 }
 
 .sidebar.active ~ .main-content {
