@@ -213,17 +213,18 @@ input[type="text"]::placeholder {
 button {
   width: 100%;
   padding: 13px;
-  background-color: #00aaff;
+  background-color: #fff;
   border: none;
-  color: white;
-  font-size: 17px;
+  color: #000;
+  font-size: 16px;
+  margin-top: 10px;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.2s;
 }
 
 button:hover {
-  background-color: #0088cc;
+  background-color: #eee;
 }
 
 .youtube-input {
@@ -253,5 +254,5 @@ button:hover {
   line-height: 1;        /* чтобы текст не растягивался */
   padding: 2px 0;        /* уменьшает вертикальную высоту */
   outline: none;
-  padding-top: 18px;
+  padding-top: 15px;
 }
