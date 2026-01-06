@@ -233,7 +233,7 @@ button:hover {
   background: #121212;
   padding: 8px 12px;
   border-radius: 6px;
-  border: 1px solid #555;
+  border: 1px solid #fff;
 }
 
 .youtube-input svg {
@@ -244,7 +244,6 @@ button:hover {
 }
 
 .youtube-input input {
-  flex: 1;
   background: transparent;
   border: none;
   color: #fff;
