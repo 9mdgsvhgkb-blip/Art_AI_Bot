@@ -231,14 +231,14 @@ button:hover {
   align-items: center;
   gap: 8px;
   background: #121212;
-  padding: 8px 10px;   /* чуть больше padding для нормальной высоты */
+  padding: 4px 8px;       /* высота контролируется здесь */
   border-radius: 6px;
   border: 1px solid #555;
 }
 
 .youtube-input svg {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   color: currentColor;
   flex-shrink: 0;
 }
@@ -247,10 +247,9 @@ button:hover {
   flex: 1;
   background: transparent;
   border: none;
-  color: #888;
+  color: #888;           /* цвет текста "Введите ссылку YouTube" */
   font-size: 15px;
-  line-height: 1;        /* убираем лишнее пространство */
-  padding: 4px 0
-  padding: 0;           /* убираем лишние отступы внутри input */
+  line-height: 1;        /* чтобы текст не растягивался */
+  padding: 2px 0;        /* уменьшает вертикальную высоту */
   outline: none;
 }
