@@ -159,36 +159,6 @@ body {
   max-width: 520px;
 }
 
-/* ================== INPUT ================== */
-.youtube-input {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: #0e1016;
-  border: 1px solid #1f2430;
-  border-radius: 10px;
-  padding: 12px 14px;
-  margin-bottom: 20px;
-}
-
-.youtube-input svg {
-  width: 20px;
-  color: #9ca3af;
-}
-
-.youtube-input input {
-  background: transparent;
-  border: none;
-  outline: none;
-  color: #e5e7eb;
-  width: 100%;
-  font-size: 14px;
-}
-
-.youtube-input input::placeholder {
-  color: #6b7280;
-}
-
 /* ================== BUTTON ================== */
 button {
   width: 100%;
