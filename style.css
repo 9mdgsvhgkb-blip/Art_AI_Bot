@@ -57,7 +57,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  transform: translateX(5px);
+  transform: translateX(1px);
 }
 
 .center img {
