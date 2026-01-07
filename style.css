@@ -1,179 +1,58 @@
-/* ================== RESET ================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Inter", system-ui, sans-serif;
+/* Скрываем стандартный чекбокс */
+.menu-toggle {
+  display: none;
 }
 
-body {
-  background: #0e0f13;
-  color: #e5e7eb;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
-/* ================== OVERLAY ================== */
-#overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(4px);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  z-index: 999;
-}
-
-#overlay.active {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* ================== HEADER ================== */
-.header {
-  height: 64px;
-  background: #111318;
-  border-bottom: 1px solid #1f2430;
+/* Стили «гамбургера» */
+.menu-label {
   display: flex;
-  align-items: center;
-  padding: 0 20px;
-  position: fixed;
-  width: 100%;
-  z-index: 1000;
-}
-
-.hamburger {
+  flex-direction: column;
+  justify-content: space-between;
   width: 28px;
+  height: 22px;
   cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 21px;
   z-index: 1001;
 }
 
-.hamburger span {
+.menu-label span {
   display: block;
   height: 2px;
   background: #e5e7eb;
-  margin: 6px 0;
+  border-radius: 1px;
 }
 
-.center {
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  transform: translateX(-5px);
-}
-
-.center img {
-  width: 30px;
-}
-
-.center h1 {
-  font-size: 20px;
-  font-weight: 600;
-}
-
-/* ================== SIDEBAR ================== */
-.sidebar {
+/* Полноэкранная панель по умолчанию скрыта */
+.fullscreen-menu {
   position: fixed;
-  top: 0;
-  left: -280px;
-  width: 280px;
-  height: 100%;
+  inset: 0;
   background: #111318;
-  border-right: 1px solid #1f2430;
-  z-index: 1003;
-  transition: left 0.25s ease-in-out;
-}
-
-.sidebar.active {
-  left: 0;
-}
-
-.sidebar-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px;
-  border-bottom: 1px solid #1f2430;
-}
-
-.sidebar-logo {
-  width: 32px;
-}
-
-.close-btn {
-  font-size: 26px;
-  cursor: pointer;
-  color: #9ca3af;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 12px;
-}
-
-.sidebar li {
-  margin-bottom: 6px;
-}
-
-.sidebar li a {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px;
-  border-radius: 10px;
-  color: #e5e7eb;
-  text-decoration: none;
-  font-size: 14px;
-  transition: background 0.2s ease;
-}
-
-.sidebar li a:hover {
-  background: #1a1f2b;
-}
-
-.sidebar li a.active {
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
-  color: #fff;
-}
-
-.menu-icon {
-  width: 20px;
-}
-
-/* ================== MAIN ================== */
-.main-content {
-  padding: 115px 20px 40px 20px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 999;
 }
 
-.block {
-  background: #111318;
-  border: 1px solid #1f2430;
-  border-radius: 14px;
-  padding: 24px;
-  width: 100%;
-  max-width: 520px;
+/* Когда чекбокс включён — показываем меню */
+.menu-toggle:checked ~ .fullscreen-menu {
+  transform: scale(1);
+  opacity: 1;
 }
 
-/* ================== BUTTON ================== */
-button {
-  width: 100%;
-  padding: 14px;
-  border-radius: 10px;
-  border: none;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
-  color: #fff;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: opacity 0.2s ease;
+/* Ссылки меню */
+.fullscreen-menu a {
+  color: #e5e7eb;
+  font-size: 28px;
+  margin: 16px 0;
+  text-decoration: none;
 }
 
-button:hover {
-  opacity: 0.9;
+.fullscreen-menu a:hover {
+  color: #8b5cf6;
 }
-
