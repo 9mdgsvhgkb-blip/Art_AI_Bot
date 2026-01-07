@@ -210,8 +210,8 @@ button:hover {
 .floating-buttons {
   display: flex;
   justify-content: center;
-  justify-content: space-evenly;
-  align-items: flex-start;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   gap: 40px;
   margin-top: 40px;
@@ -268,12 +268,4 @@ button:hover {
 .icon-btn:hover {
   background: #6366f1;
   transform: scale(1.1);
-}
-
-.floating-buttons .icon-btn-wrapper:nth-child(2) {
-  margin-left: -6px; /* сдвигаем вторую кнопку на 10px влево */
-}
-
-.floating-buttons .icon-btn-wrapper:nth-child(2) {
-  margin-left: -5px; /* сдвигаем левее */
 }
