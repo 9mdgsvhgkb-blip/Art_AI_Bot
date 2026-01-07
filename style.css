@@ -202,8 +202,8 @@ button {
 }
 
 .icon-btn {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   background: #1f2430;
   display: flex;
@@ -224,7 +224,7 @@ button {
   width: 100%;
   margin-top: 5px;
   font-weight: 600;
-  font-size: 10px;
+  font-size: 18px;
 }
 
 .icon-btn svg {
