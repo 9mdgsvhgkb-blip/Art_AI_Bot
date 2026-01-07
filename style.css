@@ -233,10 +233,25 @@ button:hover {
   transition: transform 0.25s ease, background 0.25s ease;
 }
 
-.icon-btn svg {
+/* Первая кнопка (Play) - чуть больше */
+.icon-btn-wrapper:nth-child(1) svg {
+  width: 36px;
+  height: 36px;
+  color: #e5e7eb;
+}
+
+/* Вторая кнопка (CC) - уменьшить в два раза */
+.icon-btn-wrapper:nth-child(2) svg {
+  width: 24px;
+  height: 24px;
+  color: #e5e7eb;
+}
+
+/* Третья кнопка (Редактор) - сделать белой */
+.icon-btn-wrapper:nth-child(3) svg {
   width: 28px;
   height: 28px;
-  color: #e5e7eb; /* важно! иначе может не отображаться */
+  color: #fff;
 }
 
 .icon-label {
