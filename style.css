@@ -57,6 +57,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  position: absolute;
 }
 
 .center img {
