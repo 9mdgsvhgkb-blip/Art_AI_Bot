@@ -109,6 +109,7 @@ body {
 .sidebar ul {
   list-style: none;
   padding: 12px;
+  margin: 0;
 }
 
 .sidebar li {
@@ -118,7 +119,8 @@ body {
 .sidebar li a {
   display: flex;
   align-items: center;
-  padding: 12px;
+  gap: 12px;
+  padding: 12px 16px;
   border-radius: 10px;
   color: #e5e7eb;
   text-decoration: none;
@@ -131,6 +133,13 @@ body {
 
 .sidebar li a.active {
   background: linear-gradient(135deg, #6366f1, #8b5cf6);
+}
+
+.sidebar li a svg {
+  flex-shrink: 0;          /* иконка не сжимается */
+  width: 20px;
+  height: 20px;
+  color: #e5e7eb;
 }
 
 /* MAIN */
