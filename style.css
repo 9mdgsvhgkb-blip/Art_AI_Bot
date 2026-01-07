@@ -1,4 +1,4 @@
-/* ===== RESET ===== */
+/* ================== RESET ================== */
 * {
   margin: 0;
   padding: 0;
@@ -9,23 +9,28 @@
 body {
   background: #0e0f13;
   color: #e5e7eb;
-  height: 100vh;
+  min-height: 100vh;
   overflow-x: hidden;
 }
 
-/* ===== OVERLAY ===== */
+/* ================== OVERLAY ================== */
 #overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(4px);
   opacity: 0;
   pointer-events: none;
-  transition: .3s;
+  transition: opacity 0.3s ease;
   z-index: 9;
 }
 
-/* ===== HEADER ===== */
+#overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ================== HEADER ================== */
 .header {
   height: 64px;
   background: #111318;
@@ -63,7 +68,7 @@ body {
   font-weight: 600;
 }
 
-/* ===== SIDEBAR ===== */
+/* ================== SIDEBAR ================== */
 .sidebar {
   position: fixed;
   top: 0;
@@ -73,7 +78,11 @@ body {
   background: #111318;
   border-right: 1px solid #1f2430;
   z-index: 10;
-  transition: .3s;
+  transition: left 0.3s ease;
+}
+
+.sidebar.active {
+  left: 0;
 }
 
 .sidebar-top {
@@ -99,27 +108,36 @@ body {
   padding: 12px;
 }
 
+.sidebar li {
+  margin-bottom: 6px;
+}
+
 .sidebar li a {
   display: flex;
   align-items: center;
   gap: 12px;
   padding: 12px;
-  border-radius: 8px;
+  border-radius: 10px;
   color: #e5e7eb;
   text-decoration: none;
   font-size: 14px;
-  transition: .2s;
+  transition: background 0.2s ease;
 }
 
 .sidebar li a:hover {
   background: #1a1f2b;
 }
 
+.sidebar li a.active {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #fff;
+}
+
 .menu-icon {
   width: 20px;
 }
 
-/* ===== MAIN ===== */
+/* ================== MAIN ================== */
 .main-content {
   padding: 40px 20px;
   display: flex;
@@ -135,7 +153,7 @@ body {
   max-width: 520px;
 }
 
-/* ===== INPUT ===== */
+/* ================== INPUT ================== */
 .youtube-input {
   display: flex;
   align-items: center;
@@ -165,20 +183,20 @@ body {
   color: #6b7280;
 }
 
-/* ===== BUTTON ===== */
+/* ================== BUTTON ================== */
 button {
   width: 100%;
   padding: 14px;
   border-radius: 10px;
   border: none;
   background: linear-gradient(135deg, #6366f1, #8b5cf6);
-  color: white;
+  color: #fff;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
-  transition: .2s;
+  transition: opacity 0.2s ease;
 }
 
 button:hover {
-  opacity: .9;
+  opacity: 0.9;
 }
