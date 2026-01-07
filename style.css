@@ -60,6 +60,8 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  transform: none;
+  justify-content: center;
 }
 
 .center img {
