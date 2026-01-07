@@ -62,6 +62,7 @@ body {
   gap: 10px;
   transform: none;
   justify-content: center;
+  transform: translateX(-20px);
 }
 
 .center img {
