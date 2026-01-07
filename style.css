@@ -235,22 +235,22 @@ button:hover {
 
 /* Первая кнопка (Play) - чуть больше */
 .icon-btn-wrapper:nth-child(1) svg {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   color: #e5e7eb;
 }
 
 /* Вторая кнопка (CC) - уменьшить в два раза */
 .icon-btn-wrapper:nth-child(2) svg {
-  width: 24px;
-  height: 24px;
+  width: 40px;
+  height: 40px;
   color: #e5e7eb;
 }
 
 /* Третья кнопка (Редактор) - сделать белой */
 .icon-btn-wrapper:nth-child(3) svg {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   color: #fff;
 }
 
