@@ -203,3 +203,42 @@ button {
 button:hover {
   opacity: 0.9;
 }
+
+.icon-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px; /* отступ от кнопки "Загрузить видео" */
+  flex-wrap: wrap;   /* на мобильных перенос */
+}
+
+.icon-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #1f2430;
+  color: #e5e7eb;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  padding: 8px;
+  text-align: center;
+}
+
+.icon-btn svg {
+  width: 28px;
+  height: 28px;
+  margin-bottom: 4px;
+}
+
+.icon-btn span {
+  font-size: 11px;
+}
+
+.icon-btn:hover {
+  background: #6366f1;
+  transform: scale(1.1);
+}
