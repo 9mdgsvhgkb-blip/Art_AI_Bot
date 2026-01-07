@@ -170,6 +170,17 @@ body {
   width: 100%;
 }
 
+.youtube-input svg {
+  width: 20px;
+  height: 20px;
+  color: #9ca3af;
+  flex-shrink: 0;
+}
+
+.youtube-input input {
+  font-size: 14px;
+}
+
 /* BUTTON */
 button {
   width: 100%;
