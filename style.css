@@ -242,8 +242,8 @@ button:hover {
 
 /* Вторая кнопка (CC) - уменьшить в два раза */
 .icon-btn-wrapper:nth-child(2) svg {
-  width: 40px;
-  height: 40px;
+  width: 39px;
+  height: 39px;
   color: #e5e7eb;
 }
 
