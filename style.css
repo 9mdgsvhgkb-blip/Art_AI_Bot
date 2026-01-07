@@ -269,3 +269,7 @@ button:hover {
   background: #6366f1;
   transform: scale(1.1);
 }
+
+.floating-buttons .icon-btn-wrapper:nth-child(2) {
+  margin-left: -4px; /* сдвигаем вторую кнопку на 10px влево */
+}
