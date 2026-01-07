@@ -82,7 +82,7 @@ body {
   height: 100%;
   background: #111318;
   border-right: 1px solid #1f2430;
-  z-index: 110;
+  z-index: 1003;
   transition: left 0.25s ease-in-out;
 }
 
