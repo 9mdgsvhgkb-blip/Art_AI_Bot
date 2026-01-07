@@ -209,6 +209,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #e5e7eb;
 }
 
 .icon-btn-wrapper {
