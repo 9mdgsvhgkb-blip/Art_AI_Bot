@@ -211,37 +211,46 @@ button:hover {
   display: flex;
   justify-content: center;
   gap: 40px;
-  margin-top: 60px; /* от блока загрузки видео */
+  margin-top: 60px;
   flex-wrap: wrap;
 }
 
-.icon-btn {
+/* Контейнер для круга и подписи */
+.icon-btn-wrapper {
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+/* Круг с иконкой */
+.icon-btn {
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 70px;
   height: 70px;
   border-radius: 50%;
   background: #1f2430;
-  color: #e5e7eb;
   cursor: pointer;
   transition: transform 0.25s ease, background 0.25s ease;
-  text-align: center;
 }
 
 .icon-btn svg {
   width: 28px;
   height: 28px;
-  margin-bottom: 4px;
+  color: #e5e7eb;
 }
 
-.icon-btn span {
-  font-size: 11px;
+/* Подпись под кругом */
+.icon-label {
+  margin-top: 8px;
+  font-size: 12px;
   text-align: center;
+  color: #e5e7eb;
 }
 
+/* Hover эффект */
 .icon-btn:hover {
-  transform: scale(1.1);
   background: #6366f1;
+  transform: scale(1.1);
 }
