@@ -232,3 +232,8 @@ button {
   fill: currentColor;
   overflow: visible;
 }
+
+.icon-btn-wrapper:nth-child(1) svg {
+  width: 35px;
+  height: 35px;
+}
