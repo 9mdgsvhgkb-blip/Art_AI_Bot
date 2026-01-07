@@ -40,6 +40,7 @@ body {
   padding: 0 20px;
   position: fixed;
   width: 100%;
+  z-index: 100;
 }
 
 .hamburger {
@@ -80,8 +81,8 @@ body {
   height: 100%;
   background: #111318;
   border-right: 1px solid #1f2430;
-  z-index: 10;
-  transition: left 0.2s ease;
+  z-index: 110;
+  transition: left 0.25s ease-in-out;
 }
 
 .sidebar.active {
@@ -142,9 +143,10 @@ body {
 
 /* ================== MAIN ================== */
 .main-content {
-  padding: 100px 20px 40px 20px;
+  padding: 100px 20px 60px 20px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .block {
@@ -204,12 +206,13 @@ button:hover {
   opacity: 0.9;
 }
 
-.icon-buttons {
+/* ================== ПЛАВАЮЩИЕ КНОПКИ ================== */
+.floating-buttons {
   display: flex;
-  gap: 20px;
   justify-content: center;
-  margin-top: 20px; /* отступ от кнопки "Загрузить видео" */
-  flex-wrap: wrap;   /* на мобильных перенос */
+  gap: 40px;
+  margin-top: 60px; /* от блока загрузки видео */
+  flex-wrap: wrap;
 }
 
 .icon-btn {
@@ -223,8 +226,7 @@ button:hover {
   background: #1f2430;
   color: #e5e7eb;
   cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
-  padding: 8px;
+  transition: transform 0.25s ease, background 0.25s ease;
   text-align: center;
 }
 
@@ -236,9 +238,10 @@ button:hover {
 
 .icon-btn span {
   font-size: 11px;
+  text-align: center;
 }
 
 .icon-btn:hover {
-  background: #6366f1;
   transform: scale(1.1);
+  background: #6366f1;
 }
