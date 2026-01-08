@@ -16,15 +16,15 @@ closeBtn.addEventListener('click', () => {
 
 overlay.addEventListener('click', () => {
   sidebar.classList.remove('active');
-  overlay.classList.remove('active');
+  closeAllModals();
 });
 
 const menuLinks = document.querySelectorAll('.sidebar a');
 
 menuLinks.forEach(link => {
   link.addEventListener('click', () => {
-    menuLinks.forEach(l => l.classList.remove('active')); // убираем активность со всех
-    link.classList.add('active'); // добавляем текущей
+    menuLinks.forEach(l => l.classList.remove('active'));
+    link.classList.add('active');
   });
 });
 
@@ -43,7 +43,40 @@ modalButtons.forEach(btn => {
   });
 });
 
-overlay.addEventListener('click', () => {
-  modals.forEach(modal => modal.style.display = 'none');
+// Функция закрытия всех модалок
+function closeAllModals() {
+  modals.forEach(modal => {
+    modal.style.display = 'none';
+  });
   overlay.classList.remove('active');
+}
+
+// Закрытие модалки при клике на крестик
+const modalCloseButtons = document.querySelectorAll('.modal-close');
+
+modalCloseButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const modal = btn.closest('.modal');
+    if (modal) {
+      modal.style.display = 'none';
+      overlay.classList.remove('active');
+    }
+  });
+});
+
+// Закрытие модалки при клике на overlay (кроме sidebar)
+overlay.addEventListener('click', (e) => {
+  if (!sidebar.classList.contains('active')) {
+    closeAllModals();
+  }
+});
+
+// Закрытие модалки при клике вне контента
+modals.forEach(modal => {
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+      overlay.classList.remove('active');
+    }
+  });
 });
