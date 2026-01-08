@@ -302,10 +302,11 @@ button {
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.5);
-  display: none; /* скрыта по умолчанию */
+  display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1200;
+  opacity: 0;
   transition: opacity 0.13s ease;
 }
 
@@ -325,6 +326,7 @@ button {
   position: relative;
   transform: scale(0.8);      
   transition: all 0.25s ease;
+  opacity: 0;
 }
 
 .modal-content h2 {
