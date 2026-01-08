@@ -90,7 +90,7 @@ body {
   background: #111318;
   border-right: 1px solid #1f2430;
   z-index: 1001;
-  transition: left 0.25s ease;
+  transition: left 0.18s ease;
 }
 
 .sidebar.active {
@@ -326,9 +326,11 @@ button {
   position: absolute;
   top: 12px;
   right: 12px;
-  font-size: 22px;
+  font-size: 25px;
   cursor: pointer;
   color: #e5e7eb;
+  width: 30px;
+  height: 36px;
 }
 
 .modal-content h3 {
