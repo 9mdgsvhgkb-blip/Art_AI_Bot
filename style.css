@@ -324,7 +324,7 @@ button {
   color: #e5e7eb;
   position: relative;
   transform: scale(0.8);      
-  transition: transform 0.13s ease;
+  transition: all 0.25s ease;
 }
 
 .modal-content h2 {
