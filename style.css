@@ -351,3 +351,9 @@ button {
   cursor: pointer;
   color: #9ca3af;
 }
+
+.modal.active .modal-content,
+.modal-content.show {
+  transform: scale(1);
+  opacity: 1;
+}
