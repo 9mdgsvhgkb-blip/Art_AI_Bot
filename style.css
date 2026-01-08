@@ -318,6 +318,7 @@ button {
   padding: 30px;
   border-radius: 14px;
   max-width: 400px;
+  width: 400px;
   text-align: center;
   color: #e5e7eb;
   position: relative;
