@@ -303,6 +303,7 @@ button {
   align-items: center;
   justify-content: center;
   z-index: 1002;
+  transition: opacity 0.13s ease;
 }
 
 .modal-overlay {
