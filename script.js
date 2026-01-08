@@ -14,13 +14,7 @@ closeBtn.addEventListener('click', () => {
   overlay.classList.remove('active');
 });
 
-overlay.addEventListener('click', () => {
-  sidebar.classList.remove('active');
-  closeAllModals();
-});
-
 const menuLinks = document.querySelectorAll('.sidebar a');
-
 menuLinks.forEach(link => {
   link.addEventListener('click', () => {
     menuLinks.forEach(l => l.classList.remove('active'));
@@ -32,6 +26,13 @@ menuLinks.forEach(link => {
 const modalButtons = document.querySelectorAll('.icon-btn-wrapper');
 const modals = document.querySelectorAll('.modal');
 
+// Функция закрытия всех модалок
+function closeAllModals() {
+  modals.forEach(modal => modal.style.display = 'none');
+  overlay.classList.remove('active');
+}
+
+// Открытие модалки по кнопке
 modalButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     const modalId = btn.dataset.modal;
@@ -43,17 +44,8 @@ modalButtons.forEach(btn => {
   });
 });
 
-// Функция закрытия всех модалок
-function closeAllModals() {
-  modals.forEach(modal => {
-    modal.style.display = 'none';
-  });
-  overlay.classList.remove('active');
-}
-
 // Закрытие модалки при клике на крестик
 const modalCloseButtons = document.querySelectorAll('.modal-close');
-
 modalCloseButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     const modal = btn.closest('.modal');
@@ -64,17 +56,17 @@ modalCloseButtons.forEach(btn => {
   });
 });
 
-// Закрытие модалки при клике на overlay (кроме sidebar)
-overlay.addEventListener('click', (e) => {
-  if (!sidebar.classList.contains('active')) {
-    closeAllModals();
-  }
+// Закрытие при клике на overlay
+overlay.addEventListener('click', () => {
+  // Закрываем sidebar и все модалки
+  sidebar.classList.remove('active');
+  closeAllModals();
 });
 
-// Закрытие модалки при клике вне контента
+// Закрытие при клике вне контента модалки
 modals.forEach(modal => {
   modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
+    if (e.target === modal) { // если кликнули именно по затемненной области модалки
       modal.style.display = 'none';
       overlay.classList.remove('active');
     }
