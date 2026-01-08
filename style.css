@@ -306,6 +306,7 @@ button {
   align-items: center;
   justify-content: center;
   z-index: 1200;
+  transition: opacity 0.13s ease;
 }
 
 .modal.active {
@@ -317,11 +318,13 @@ button {
   border: 1px solid #1f2430;
   padding: 30px;
   border-radius: 14px;
-  max-width: 400px;
-  width: 400px;
+  max-width: 300px;
+  width: 300px;
   text-align: center;
   color: #e5e7eb;
   position: relative;
+  transform: scale(0.8);      
+  transition: transform 0.13s ease;
 }
 
 .modal-content h2 {
