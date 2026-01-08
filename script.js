@@ -30,6 +30,7 @@ menuLinks.forEach(link => {
 
 // ======== Модальные окна для плавающих кнопок ========
 const modal = document.getElementById('modal');
+const modalContent = document.querySelector('.modal-content'); 
 const modalTitle = document.getElementById('modalTitle');
 const modalText = document.getElementById('modalText');
 const modalImage = document.getElementById('modalImage');
@@ -40,7 +41,6 @@ const floatingButtons = document.querySelectorAll('.icon-btn-wrapper');
 
 floatingButtons.forEach((btnWrapper, index) => {
   btnWrapper.addEventListener('click', () => {
-    // Добавляем класс для плавного открытия
     modal.classList.add('active');
     modalContent.classList.add('show'); 
 
