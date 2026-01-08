@@ -8,8 +8,11 @@
 </head>
 <body>
 
-  <!-- Overlay -->
-  <div id="overlay"></div>
+  <!-- Sidebar Overlay -->
+  <div id="sidebar-overlay"></div>
+
+  <!-- Modals Overlay -->
+  <div id="modal-overlay"></div>
 
   <!-- Header -->
   <header class="header">
@@ -31,9 +34,13 @@
       <img src="logo.png" class="sidebar-logo" alt="">
       <span id="closeBtn" class="close-btn">✕</span>
     </div>
-
     <ul>
-      <!-- Sidebar items... оставляем как есть -->
+      <li><a href="#" class="active">Главная</a></li>
+      <li><a href="#">Проекты</a></li>
+      <li><a href="#">Профиль</a></li>
+      <li><a href="#">Поддержка</a></li>
+      <li><a href="#">Подписка</a></li>
+      <li><a href="#">Выйти</a></li>
     </ul>
   </nav>
 
@@ -50,68 +57,62 @@
       <button>Загрузить видео</button>
     </div>
 
-    <!-- Плавающие кнопки -->
+    <!-- Floating Buttons -->
     <div class="floating-buttons">
       <div class="icon-btn-wrapper" data-modal="clipModal">
         <div class="icon-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24" id="play">
-            <path fill="currentColor" d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18c.62-.39.62-1.29 0-1.69L9.54 5.98C8.87 5.55 8 6.03 8 6.82z"></path>
-          </svg>
+          <svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18c.62-.39.62-1.29 0-1.69L9.54 5.98C8.87 5.55 8 6.03 8 6.82z"/></svg>
         </div>
         <span class="icon-label">Нарезать клипы</span>
       </div>
 
       <div class="icon-btn-wrapper" data-modal="subtitlesModal">
         <div class="icon-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-            <path fill="currentColor" d="M38 8H10c-2.21 0-4 1.79-4 4v24c0 2.21 1.79 4 4 4h28c2.21 0 4-1.79 4-4V12c0-2.21-1.79-4-4-4zM22 22h-3v-1h-4v6h4v-1h3v2a2 2 0 0 1-2 2h-6a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2zm14 0h-3v-1h-4v6h4v-1h3v2a2 2 0 0 1-2 2h-6a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2z"/>
-          </svg>
+          <svg viewBox="0 0 48 48"><path fill="currentColor" d="M38 8H10c-2.21 0-4 1.79-4 4v24c0 2.21 1.79 4 4 4h28c2.21 0 4-1.79 4-4V12c0-2.21-1.79-4-4-4z"/></svg>
         </div>
         <span class="icon-label">ИИ Субтитры</span>
       </div>
 
       <div class="icon-btn-wrapper" data-modal="editorModal">
         <div class="icon-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-            <path fill="currentColor" d="M8.38 5.59a3.69 3.69 0 1 0-3.69 3.69 3.67 3.67 0 0 0 2.483-.976L9 9.991l.012.009-.004.003-1.836 1.693a3.665 3.665 0 0 0-2.482-.976 3.69 3.69 0 1 0 3.69 3.69c0-.297-.044-.582-.111-.858l2.844-1.991 4.127 3.065c2.212 1.549 3.76-.663 3.76-.663L8.269 6.448c.066-.276.111-.561.111-.858zm-3.69 1.8a1.8 1.8 0 1 1 0-3.6 1.8 1.8 0 0 1 0 3.6zm0 8.82a1.8 1.8 0 1 1 0-3.6 1.8 1.8 0 0 1 0 3.6zM19 6.038s-1.548-2.212-3.76-.663L12.035 7.61l2.354 1.648L19 6.038z"/>
-          </svg>
+          <svg viewBox="0 0 20 20"><path fill="currentColor" d="M8.38 5.59a3.69 3.69 0 1 0-3.69 3.69"/></svg>
         </div>
         <span class="icon-label">Редактор</span>
       </div>
     </div>
 
-<!-- Модальные окна -->
-<div class="modal" id="clipModal">
-  <div class="modal-content">
-    <span class="modal-close">✕</span>
-    <h3>Нарезка клипов</h3>
-    <p>ИИ автоматически ищет лучшие моменты, добавляет субтитры и режет под формат коротких видео.</p>
-    <img src="clip.jpg" alt="Нарезка клипов" class="modal-img">
-    <button class="modal-upload">Загрузить видео</button>
-  </div>
-</div>
+    <!-- Modals -->
+    <div class="modal" id="clipModal">
+      <div class="modal-content">
+        <span class="modal-close">✕</span>
+        <h3>Нарезка клипов</h3>
+        <p>ИИ автоматически ищет лучшие моменты, добавляет субтитры и режет под формат коротких видео.</p>
+        <img src="clip.jpg" alt="Нарезка клипов" class="modal-img">
+        <button class="modal-upload">Загрузить видео</button>
+      </div>
+    </div>
 
-<div class="modal" id="subtitlesModal">
-  <div class="modal-content">
-    <span class="modal-close">✕</span>
-    <h3>ИИ Субтитры</h3>
-    <p>ИИ автоматически добавляет субтитры в ваше видео.</p>
-    <img src="subtitles.jpg" alt="ИИ Субтитры" class="modal-img">
-    <button class="modal-upload">Загрузить видео</button>
-  </div>
-</div>
+    <div class="modal" id="subtitlesModal">
+      <div class="modal-content">
+        <span class="modal-close">✕</span>
+        <h3>ИИ Субтитры</h3>
+        <p>ИИ автоматически добавляет субтитры в ваше видео.</p>
+        <img src="subtitles.jpg" alt="ИИ Субтитры" class="modal-img">
+        <button class="modal-upload">Загрузить видео</button>
+      </div>
+    </div>
 
-<div class="modal" id="editorModal">
-  <div class="modal-content">
-    <span class="modal-close">✕</span>
-    <h3>Редактор</h3>
-    <p>Загрузите и редактируйте свои видео.</p>
-    <img src="editor.jpg" alt="Редактор" class="modal-img">
-    <button class="modal-upload">Загрузить видео</button>
-  </div>
-</div>
+    <div class="modal" id="editorModal">
+      <div class="modal-content">
+        <span class="modal-close">✕</span>
+        <h3>Редактор</h3>
+        <p>Загрузите и редактируйте свои видео.</p>
+        <img src="editor.jpg" alt="Редактор" class="modal-img">
+        <button class="modal-upload">Загрузить видео</button>
+      </div>
+    </div>
 
-    <!-- Мои проекты -->
+    <!-- Projects -->
     <div class="projects-preview">
       <h2 class="projects-title">Мои проекты</h2>
       <a href="#" class="projects-card">
