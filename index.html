@@ -81,29 +81,38 @@
     </div>
 
     <!-- Модальные окна -->
-    <div class="modal" id="clipModal">
-      <div class="modal-content">
-        <h3>Нарезать клипы</h3>
-        <p>Эта кнопка позволяет нарезать ваше видео на клипы.</p>
-        <button class="modal-upload">Загрузить</button>
-      </div>
-    </div>
+<div class="modal" id="clipModal">
+  <div class="modal-overlay"></div>
+  <div class="modal-content">
+    <span class="modal-close">✕</span>
+    <h3>Нарезка клипов</h3>
+    <p>ИИ автоматически ищет лучшие моменты, добавляет субтитры и режет под формат коротких видео.</p>
+    <img src="clip.jpg" alt="Нарезка клипов" class="modal-img">
+    <button class="modal-upload">Загрузить видео</button>
+  </div>
+</div>
 
-    <div class="modal" id="subtitlesModal">
-      <div class="modal-content">
-        <h3>ИИ Субтитры</h3>
-        <p>Эта кнопка автоматически генерирует субтитры для вашего видео.</p>
-        <button class="modal-upload">Загрузить</button>
-      </div>
-    </div>
+<div class="modal" id="subtitlesModal">
+  <div class="modal-overlay"></div>
+  <div class="modal-content">
+    <span class="modal-close">✕</span>
+    <h3>ИИ Субтитры</h3>
+    <p>ИИ автоматически добавляет субтитры в ваше видео.</p>
+    <img src="subtitles.jpg" alt="ИИ Субтитры" class="modal-img">
+    <button class="modal-upload">Загрузить видео</button>
+  </div>
+</div>
 
-    <div class="modal" id="editorModal">
-      <div class="modal-content">
-        <h3>Редактор</h3>
-        <p>Эта кнопка открывает видео редактор для редактирования видео.</p>
-        <button class="modal-upload">Загрузить</button>
-      </div>
-    </div>
+<div class="modal" id="editorModal">
+  <div class="modal-overlay"></div>
+  <div class="modal-content">
+    <span class="modal-close">✕</span>
+    <h3>Редактор</h3>
+    <p>Загрузите и редактируйте свои видео.</p>
+    <img src="editor.jpg" alt="Редактор" class="modal-img">
+    <button class="modal-upload">Загрузить видео</button>
+  </div>
+</div>
 
     <!-- Мои проекты -->
     <div class="projects-preview">
