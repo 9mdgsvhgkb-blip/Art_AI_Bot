@@ -14,6 +14,12 @@ closeBtn.addEventListener('click', () => {
   overlay.classList.remove('active');
 });
 
+// Закрытие sidebar при клике на overlay
+overlay.addEventListener('click', () => {
+  sidebar.classList.remove('active');
+  closeAllModals();
+});
+
 const menuLinks = document.querySelectorAll('.sidebar a');
 menuLinks.forEach(link => {
   link.addEventListener('click', () => {
@@ -25,10 +31,11 @@ menuLinks.forEach(link => {
 // ==================== MODALS ====================
 const modalButtons = document.querySelectorAll('.icon-btn-wrapper');
 const modals = document.querySelectorAll('.modal');
+const modalCloseButtons = document.querySelectorAll('.modal-close');
 
 // Функция закрытия всех модалок
 function closeAllModals() {
-  modals.forEach(modal => modal.style.display = 'none');
+  modals.forEach(modal => modal.classList.remove('show'));
   overlay.classList.remove('active');
 }
 
@@ -38,36 +45,28 @@ modalButtons.forEach(btn => {
     const modalId = btn.dataset.modal;
     const modal = document.getElementById(modalId);
     if (modal) {
-      modal.style.display = 'flex';
+      modal.classList.add('show');
       overlay.classList.add('active');
     }
   });
 });
 
-// Закрытие модалки при клике на крестик
-const modalCloseButtons = document.querySelectorAll('.modal-close');
+// Закрытие при клике на крестик
 modalCloseButtons.forEach(btn => {
   btn.addEventListener('click', () => {
     const modal = btn.closest('.modal');
     if (modal) {
-      modal.style.display = 'none';
+      modal.classList.remove('show');
       overlay.classList.remove('active');
     }
   });
 });
 
-// Закрытие при клике на overlay
-overlay.addEventListener('click', () => {
-  // Закрываем sidebar и все модалки
-  sidebar.classList.remove('active');
-  closeAllModals();
-});
-
-// Закрытие при клике вне контента модалки
+// Закрытие при клике на overlay вне модалки
 modals.forEach(modal => {
   modal.addEventListener('click', (e) => {
-    if (e.target === modal) { // если кликнули именно по затемненной области модалки
-      modal.style.display = 'none';
+    if (e.target === modal) { // если кликнули именно на затемнённую область
+      modal.classList.remove('show');
       overlay.classList.remove('active');
     }
   });
