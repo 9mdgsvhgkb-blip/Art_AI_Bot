@@ -40,12 +40,14 @@ const floatingButtons = document.querySelectorAll('.icon-btn-wrapper');
 
 floatingButtons.forEach((btnWrapper, index) => {
   btnWrapper.addEventListener('click', () => {
+    // Добавляем класс для плавного открытия
     modal.classList.add('active');
+    modalContent.classList.add('show'); 
 
     if(index === 0) {
       modalTitle.textContent = "Нарезка клипов";
       modalText.textContent = "ИИ автоматически ищет лучшие моменты, добавляет субтитры и режет под формат коротких видео.";
-      modalImage.src = "clip.jpg"; // путь к фото
+      modalImage.src = "clip.jpg";
     } else if(index === 1) {
       modalTitle.textContent = "ИИ Субтитры";
       modalText.textContent = "ИИ автоматически добавляет субтитры в ваше видео.";
@@ -59,7 +61,14 @@ floatingButtons.forEach((btnWrapper, index) => {
 });
 
 // Закрытие модалки
-modalClose.addEventListener('click', () => modal.classList.remove('active'));
+modalClose.addEventListener('click', () => {
+  modal.classList.remove('active');
+  modalContent.classList.remove('show'); 
+});
+
 modal.addEventListener('click', (e) => {
-  if(e.target === modal) modal.classList.remove('active');
+  if(e.target === modal) {
+    modal.classList.remove('active');
+    modalContent.classList.remove('show'); 
+  }
 });
