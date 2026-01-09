@@ -283,7 +283,7 @@ button {
 .projects-card {
   display: block;
   width: 100%;
-  border-radius: 14px;
+  border-radius: 25px;
   overflow: hidden;
   border: 1px solid #1f2430;
 }
@@ -293,7 +293,6 @@ button {
   width: 100%;
   display: block;
   object-fit: cover;
-  border-radius: 40px;
 }
 
 .modal {
