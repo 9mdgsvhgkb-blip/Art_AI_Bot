@@ -371,14 +371,31 @@ button {
     max-width: 860px;
   }
 
+  /* Растягиваем блок вниз */
+  .block {
+    padding-bottom: 40px; /* добавили пространство снизу */
+  }
+
+  /* Можно увеличить отступ между инпутом и кнопкой */
+  .youtube-input {
+    margin-bottom: 24px; /* вместо 20px, чуть больше пространства */
+  }
+
   /* Header */
   .center h1 {
     font-size: 22px;
   }
 
-  /* Sidebar */
+  /* Sidebar — скрыт по умолчанию на ПК */
   .sidebar {
     width: 300px;
+    left: 0;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
   }
 
   .sidebar li a {
@@ -424,5 +441,9 @@ button {
 
   .modal-content p {
     font-size: 15px;
+  }
+  .icon-btn,
+  .icon-btn-wrapper {
+  cursor: pointer; /* показывает, что элемент кликабельный */
   }
 }
