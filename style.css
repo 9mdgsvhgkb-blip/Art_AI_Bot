@@ -357,3 +357,72 @@ button {
   transform: scale(1);
   opacity: 1;
 }
+
+/* ================= ПК версия ================= */
+@media (min-width: 1024px) {
+
+  body {
+    font-size: 16px;
+  }
+
+  /* Центральный контент */
+  .block,
+  .projects-preview {
+    max-width: 860px;
+  }
+
+  /* Header */
+  .center h1 {
+    font-size: 22px;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    width: 300px;
+  }
+
+  .sidebar li a {
+    font-size: 15px;
+    padding: 14px 18px;
+  }
+
+  /* Floating buttons */
+  .floating-buttons {
+    gap: 60px;
+    margin-top: 60px;
+  }
+
+  .icon-btn {
+    width: 78px;
+    height: 78px;
+  }
+
+  .icon-btn svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .icon-label {
+    font-size: 14px;
+  }
+
+  /* Input */
+  .youtube-input input {
+    font-size: 15px;
+  }
+
+  /* Modal */
+  .modal-content {
+    max-width: 420px;
+    width: 420px;
+    padding: 36px;
+  }
+
+  .modal-content h2 {
+    font-size: 22px;
+  }
+
+  .modal-content p {
+    font-size: 15px;
+  }
+}
