@@ -1,12 +1,12 @@
 :root {
-  --bg: #1c1c1c;
-  --bg-soft: #2a2a2a;
+  --bg: #121212;
+  --bg-soft: #1e1e1e;
   --card: rgba(255,255,255,0.05);
   --border: rgba(255,255,255,0.12);
-  --text: #e6e6e6;
-  --muted: #a0a0a0;
-  --accent: #d4af37; /* золотой премиум */
-  --glow: #d4af3755;
+  --text: #e0e0e0;
+  --muted: #888888;
+  --accent: #333333;
+  --glow: #33333355;
 }
 
 body {
@@ -26,7 +26,7 @@ body {
 
 .primary {
   background: var(--accent);
-  color: #1c1c1c;
+  color: var(--text);
 }
 
 input::placeholder {
@@ -51,8 +51,8 @@ input::placeholder {
   border: none;
   border-radius: 8px;
   font-size: 16px;
-  color: #e6e6e6;
-  background-color: #2a2a2a;
+  color: var(--text);
+  background-color: #1e1e1e;
   text-align: center;
 }
 
@@ -60,7 +60,7 @@ input::placeholder {
   width: 280px;
   padding: 14px;
   background-color: var(--accent);
-  color: #1c1c1c;
+  color: var(--text);
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -68,7 +68,7 @@ input::placeholder {
 }
 
 .auth-container form .primary:hover {
-  background-color: #b7952d;
+  background-color: #444444;
 }
 
 #registerForm {
@@ -82,7 +82,7 @@ input::placeholder {
   width: 280px;
   padding: 14px;
   background-color: var(--accent);
-  color: #1c1c1c;
+  color: var(--text);
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -90,7 +90,7 @@ input::placeholder {
 }
 
 #registerForm .primary:hover {
-  background-color: #b7952d;
+  background-color: #444444;
 }
 
 img {
@@ -116,7 +116,7 @@ body {
   max-width: 340px;
   padding: 21px 28px;
   border-radius: 22px;
-  background: rgba(44,44,44,0.85);
+  background: rgba(30,30,30,0.9);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255,255,255,0.12);
@@ -129,7 +129,7 @@ body {
 
 .terms-text {
   font-size: 10px;
-  color: rgba(230,230,230,0.6);
+  color: rgba(224,224,224,0.6);
   text-align: center;
   line-height: 1.4;
   max-width: 260px;
@@ -139,44 +139,27 @@ body {
   margin-top: 3px;
   text-align: center;
   font-size: 14px;
-  color: rgba(230,230,230,0.8);
+  color: rgba(224,224,224,0.8);
 }
 
 .auth-footer a:hover {
   text-decoration: underline;
-  color: #e6e6e6;
+  color: #e0e0e0;
 }
 
 #registerForm input {
-  color: #e6e6e6 !important;
-  -webkit-text-fill-color: #e6e6e6 !important;
+  color: var(--text) !important;
+  -webkit-text-fill-color: var(--text) !important;
 }
 
 .auth-footer a {
-  color: #e6e6e6;
+  color: var(--text);
   text-decoration: none;
 }
 
 .auth-footer a:hover {
-  color: #e6e6e6;
+  color: #e0e0e0;
   text-decoration: underline;
-}
-
-.auth-footer {
-  margin: 0;
-  text-align: center;
-  font-size: 15px;
-  color: rgba(230,230,230,0.8);
-}
-
-.auth-footer a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-.auth-footer a:hover {
-  text-decoration: underline;
-  color: #b7952d;
 }
 
 .divider {
@@ -185,14 +168,14 @@ body {
   text-align: center;
   width: 100%;
   margin: 10px 0;
-  color: rgba(230,230,230,0.65);
+  color: rgba(224,224,224,0.6);
 }
 
 .divider::before,
 .divider::after {
   content: '';
   flex: 1;
-  border-bottom: 1px solid rgba(230,230,230,0.3);
+  border-bottom: 1px solid rgba(224,224,224,0.3);
 }
 
 .divider span {
@@ -200,8 +183,8 @@ body {
 }
 
 .auth-footer a {
-  color: rgba(230,230,230,0.8) !important;
-  border-bottom: 1px solid rgba(230,230,230,0.8) !important;
+  color: rgba(224,224,224,0.8) !important;
+  border-bottom: 1px solid rgba(224,224,224,0.8) !important;
 }
 
 input:focus::placeholder {
