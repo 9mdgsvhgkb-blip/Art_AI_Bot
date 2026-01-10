@@ -72,3 +72,53 @@ modal.addEventListener('click', (e) => {
     modalContent.classList.remove('show'); 
   }
 });
+
+const fileInput = document.getElementById('videoFile');
+
+// Привязка кнопки модалки к инпуту
+modalButton.addEventListener('click', () => {
+  fileInput.click();
+});
+
+// Обработчик выбора файла
+fileInput.addEventListener('change', () => {
+  const file = fileInput.files[0];
+  if (!file) return;
+
+  // Определяем, какая кнопка была открыта (по заголовку модалки)
+  let endpoint = '';
+  if(modalTitle.textContent.includes('Нарезка')) {
+    endpoint = '/upload_video_full';      // полный фарш
+  } else if(modalTitle.textContent.includes('Субтитры')) {
+    endpoint = '/upload_video_subtitles'; // только субтитры
+  } else if(modalTitle.textContent.includes('Редактор')) {
+    endpoint = '/upload_video';           // только загрузка
+  }
+
+  uploadVideo(file, endpoint);
+
+  // Сбрасываем инпут, чтобы можно было выбрать тот же файл снова
+  fileInput.value = '';
+});
+
+// Функция загрузки
+function uploadVideo(file, endpoint) {
+  const formData = new FormData();
+  formData.append('file', file);
+
+  fetch(endpoint, {
+    method: 'POST',
+    body: formData
+  })
+  .then(res => res.json())
+  .then(data => {
+    console.log('Ответ сервера:', data);
+    alert('Видео отправлено! ID работы: ' + data.job_id);
+    modal.classList.remove('active');
+    modalContent.classList.remove('show');
+  })
+  .catch(err => {
+    console.error(err);
+    alert('Ошибка при загрузке видео');
+  });
+}
