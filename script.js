@@ -122,3 +122,16 @@ function uploadVideo(file, endpoint) {
     alert('Ошибка при загрузке видео');
   });
 }
+if (modal && modalContent && modalClose) {
+  modalClose.addEventListener('click', () => {
+    modal.classList.remove('active');
+    modalContent.classList.remove('show'); 
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+      modalContent.classList.remove('show'); 
+    }
+  });
+}
