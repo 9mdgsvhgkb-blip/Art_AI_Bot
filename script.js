@@ -122,3 +122,10 @@ function uploadVideo(file, endpoint) {
     alert('Ошибка при загрузке видео');
   });
 }
+const mainUploadBtn = document.getElementById('mainUploadBtn');
+
+mainUploadBtn.addEventListener('click', () => {
+  // Открыть файловый диалог для полной нарезки
+  fileInput.dataset.uploadType = 'full'; 
+  fileInput.click();
+});
