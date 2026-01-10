@@ -1,224 +1,217 @@
-:root {      
-  --bg: #483D8B;      
-  --bg-soft: #483D8B;      
-  --card: rgba(255,255,255,0.05);      
-  --border: rgba(255,255,255,0.08);      
-  --text: #ffffff;      
-  --muted: #c0c0ff;      
-  --accent: #7c7cff;      
-  --glow: #7c7cff55;      
-}      
+:root {
+  --bg: #1c1c1c;
+  --bg-soft: #2a2a2a;
+  --card: rgba(255,255,255,0.05);
+  --border: rgba(255,255,255,0.12);
+  --text: #e6e6e6;
+  --muted: #a0a0a0;
+  --accent: #d4af37; /* золотой премиум */
+  --glow: #d4af3755;
+}
 
-body {    
-  margin: 0;    
-  font-family: Inter, sans-serif;    
-  background: var(--bg);    
-  color: var(--text);    
-  min-height: 100vh;    
-  display: flex;    
-  align-items: center;    
-  justify-content: center;    
-}    
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-.auth-container {      
-  background: var(--bg-soft);      
-}      
+.auth-container {
+  background: var(--bg-soft);
+}
 
-.primary {      
-  background: var(--accent);      
-  color: #000;      
-}      
+.primary {
+  background: var(--accent);
+  color: #1c1c1c;
+}
 
-input::placeholder {      
-  color: var(--muted);      
-}      
+input::placeholder {
+  color: var(--muted);
+}
 
-.card {      
-  background: var(--card);      
-  border: 1px solid var(--border);      
-}    
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+}
 
-.auth-logo img {    
-  width: 80px;    
-  height: auto;    
-  margin-bottom: 5px;    
-}    
+.auth-logo img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 5px;
+}
 
-.auth-container form input {    
-  width: 280px;    
-  padding: 14px;    
-  margin-bottom: 20px;    
-  border: none;    
-  border-radius: 8px;    
-  font-size: 16px;    
-}    
+.auth-container form input {
+  width: 280px;
+  padding: 14px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #e6e6e6;
+  background-color: #2a2a2a;
+  text-align: center;
+}
 
-.auth-container form .primary {    
-  width: 280px;    
-  padding: 14px;    
-  background-color: #7c7cff;    
-  color: #fff;    
-  border: none;    
-  border-radius: 8px;    
-  cursor: pointer;    
-  font-size: 16px;    
-}    
+.auth-container form .primary {
+  width: 280px;
+  padding: 14px;
+  background-color: var(--accent);
+  color: #1c1c1c;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
 
-.auth-container form .primary:hover {    
-  background-color: #6655cc;    
-}    
+.auth-container form .primary:hover {
+  background-color: #b7952d;
+}
 
-#registerForm {    
-  display: flex;    
-  flex-direction: column;    
-  align-items: center;    
-  gap: 10px;    
-}    
+#registerForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
 
-#registerForm input {    
-  width: 280px;    
-  padding: 14px;    
-  border: none;    
-  color: #000000;    
-  border-radius: 8px;    
-  font-size: 16px;    
-  text-align: center;    
-}    
+#registerForm .primary {
+  width: 280px;
+  padding: 14px;
+  background-color: var(--accent);
+  color: #1c1c1c;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
 
-#registerForm .primary {    
-  width: 280px;    
-  padding: 14px;    
-  background-color: #7c7cff;    
-  color: #fff;    
-  border: none;    
-  border-radius: 8px;    
-  cursor: pointer;    
-  font-size: 16px;    
-}    
+#registerForm .primary:hover {
+  background-color: #b7952d;
+}
 
-#registerForm .primary:hover {    
-  background-color: #6655cc;    
-}    
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+  pointer-events: none;
+}
 
-img {    
-  -webkit-user-drag: none;    
-  user-select: none;    
-  pointer-events: none;    
-}    
+body {
+  margin: 0;
+  height: 100svh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  font-family: Inter, sans-serif;
+  overflow: hidden;
+}
 
-body {    
-  margin: 0;    
-  height: 100svh;    
-  min-height: 100svh;    
-  display: flex;    
-  align-items: center;    
-  justify-content: center;    
-  background: #483D8B;    
-  font-family: Inter, sans-serif;    
-  overflow: hidden;    
-}    
+.auth-container {
+  width: 100%;
+  max-width: 340px;
+  padding: 21px 28px;
+  border-radius: 22px;
+  background: rgba(44,44,44,0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
 
-.auth-container {    
-  width: 100%;    
-  max-width: 340px;    
-  padding: 21px 28px;    
-  border-radius: 22px;    
-  background: rgba(255, 255, 255, 0.15);    
-  backdrop-filter: blur(20px);    
-  -webkit-backdrop-filter: blur(20px);    
-  border: 1px solid rgba(255,255,255,0.25);    
-  box-shadow: 0 30px 80px rgba(0,0,0,0.25);    
-  display: flex;    
-  flex-direction: column;    
-  align-items: center;    
-  gap: 10px;    
-}    
+.terms-text {
+  font-size: 10px;
+  color: rgba(230,230,230,0.6);
+  text-align: center;
+  line-height: 1.4;
+  max-width: 260px;
+}
 
-.terms-text {    
-  font-size: 10px;    
-  color: rgba(255,255,255,0.65);    
-  text-align: center;    
-  line-height: 1.4;    
-  max-width: 260px;    
-}    
+.auth-footer {
+  margin-top: 3px;
+  text-align: center;
+  font-size: 14px;
+  color: rgba(230,230,230,0.8);
+}
 
-.auth-footer {    
-  margin-top: 3px;    
-  text-align: center;    
-  font-size: 14px;    
-  color: rgba(255,255,255,0.8);    
-}    
+.auth-footer a:hover {
+  text-decoration: underline;
+  color: #e6e6e6;
+}
 
-.auth-footer a:hover {    
-  text-decoration: underline;    
-  color: #ffffff;    
-}    
+#registerForm input {
+  color: #e6e6e6 !important;
+  -webkit-text-fill-color: #e6e6e6 !important;
+}
 
-#registerForm input {    
-  color: #2e2a27 !important;    
-  -webkit-text-fill-color: #2e2a27 !important;    
-}    
+.auth-footer a {
+  color: #e6e6e6;
+  text-decoration: none;
+}
 
-.auth-footer a {    
-  color: #ffffff;    
-  text-decoration: none;    
-}    
+.auth-footer a:hover {
+  color: #e6e6e6;
+  text-decoration: underline;
+}
 
-.auth-footer a:hover {    
-  color: #ffffff;    
-  text-decoration: underline;    
-}    
+.auth-footer {
+  margin: 0;
+  text-align: center;
+  font-size: 15px;
+  color: rgba(230,230,230,0.8);
+}
 
-.auth-footer {    
-  margin: 0;    
-  text-align: center;    
-  font-size: 15px;    
-  color: rgba(255,255,255,0.8);    
-}    
+.auth-footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
 
-.auth-footer a {    
-  color: #7c7cff;    
-  text-decoration: none;    
-}    
+.auth-footer a:hover {
+  text-decoration: underline;
+  color: #b7952d;
+}
 
-.auth-footer a:hover {    
-  text-decoration: underline;    
-  color: #6655cc;    
-}    
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin: 10px 0;
+  color: rgba(230,230,230,0.65);
+}
 
-.divider {    
-  display: flex;    
-  align-items: center;    
-  text-align: center;    
-  width: 100%;    
-  margin: 10px 0;    
-  color: rgba(255,255,255,0.65);    
-}    
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid rgba(230,230,230,0.3);
+}
 
-.divider::before,    
-.divider::after {    
-  content: '';    
-  flex: 1;    
-  border-bottom: 1px solid rgba(255,255,255,0.3);    
-}    
+.divider span {
+  margin: 0 10px;
+}
 
-.divider span {    
-  margin: 0 10px;    
-}    
+.auth-footer a {
+  color: rgba(230,230,230,0.8) !important;
+  border-bottom: 1px solid rgba(230,230,230,0.8) !important;
+}
 
-.auth-footer a {    
-  color: rgba(255,255,255,0.8) !important;    
-  border-bottom: 1px solid rgba(255,255,255,0.8) !important;    
-}    
+input:focus::placeholder {
+  opacity: 0;
+}
 
-input:focus::placeholder {    
-  opacity: 0;    
-}    
+input:focus::placeholder {
+  color: transparent;
+}
 
-input:focus::placeholder {    
-  color: transparent;    
-}    
-
-input:focus::-webkit-input-placeholder {    
-  color: transparent;    
-}    
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
