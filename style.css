@@ -1,12 +1,12 @@
 :root {      
-  --bg: #1a1a2e;      
-  --bg-soft: rgba(26,26,46,0.85);      
-  --card: rgba(40,40,60,0.3);      
-  --border: rgba(255,255,255,0.1);      
-  --text: #e0e0e0;      
-  --muted: #a0a0c0;      
-  --accent: #8a76ff;      
-  --glow: #8a76ff55;      
+  --bg: #483D8B;      
+  --bg-soft: #483D8B;      
+  --card: rgba(255,255,255,0.05);      
+  --border: rgba(255,255,255,0.08);      
+  --text: #ffffff;      
+  --muted: #c0c0ff;      
+  --accent: #7c7cff;      
+  --glow: #7c7cff55;      
 }      
 
 body {    
@@ -26,7 +26,7 @@ body {
 
 .primary {      
   background: var(--accent);      
-  color: #111;      
+  color: #000;      
 }      
 
 input::placeholder {      
@@ -51,15 +51,13 @@ input::placeholder {
   border: none;    
   border-radius: 8px;    
   font-size: 16px;    
-  background: rgba(255,255,255,0.05);    
-  color: var(--text);    
 }    
 
 .auth-container form .primary {    
   width: 280px;    
   padding: 14px;    
-  background-color: var(--accent);    
-  color: #111;    
+  background-color: #7c7cff;    
+  color: #fff;    
   border: none;    
   border-radius: 8px;    
   cursor: pointer;    
@@ -67,13 +65,45 @@ input::placeholder {
 }    
 
 .auth-container form .primary:hover {    
-  background-color: #6b55d9;    
+  background-color: #6655cc;    
+}    
+
+#registerForm {    
+  display: flex;    
+  flex-direction: column;    
+  align-items: center;    
+  gap: 10px;    
 }    
 
 #registerForm input {    
-  color: #e0e0e0 !important;    
-  -webkit-text-fill-color: #e0e0e0 !important;    
-  background: rgba(255,255,255,0.05);    
+  width: 280px;    
+  padding: 14px;    
+  border: none;    
+  color: #000000;    
+  border-radius: 8px;    
+  font-size: 16px;    
+  text-align: center;    
+}    
+
+#registerForm .primary {    
+  width: 280px;    
+  padding: 14px;    
+  background-color: #7c7cff;    
+  color: #fff;    
+  border: none;    
+  border-radius: 8px;    
+  cursor: pointer;    
+  font-size: 16px;    
+}    
+
+#registerForm .primary:hover {    
+  background-color: #6655cc;    
+}    
+
+img {    
+  -webkit-user-drag: none;    
+  user-select: none;    
+  pointer-events: none;    
 }    
 
 body {    
@@ -83,7 +113,7 @@ body {
   display: flex;    
   align-items: center;    
   justify-content: center;    
-  background: var(--bg);    
+  background: #483D8B;    
   font-family: Inter, sans-serif;    
   overflow: hidden;    
 }    
@@ -93,11 +123,11 @@ body {
   max-width: 340px;    
   padding: 21px 28px;    
   border-radius: 22px;    
-  background: rgba(26,26,46,0.85);    
+  background: rgba(255, 255, 255, 0.15);    
   backdrop-filter: blur(20px);    
   -webkit-backdrop-filter: blur(20px);    
-  border: 1px solid rgba(255,255,255,0.12);    
-  box-shadow: 0 30px 80px rgba(0,0,0,0.35);    
+  border: 1px solid rgba(255,255,255,0.25);    
+  box-shadow: 0 30px 80px rgba(0,0,0,0.25);    
   display: flex;    
   flex-direction: column;    
   align-items: center;    
@@ -106,7 +136,7 @@ body {
 
 .terms-text {    
   font-size: 10px;    
-  color: rgba(224,224,224,0.6);    
+  color: rgba(255,255,255,0.65);    
   text-align: center;    
   line-height: 1.4;    
   max-width: 260px;    
@@ -116,7 +146,7 @@ body {
   margin-top: 3px;    
   text-align: center;    
   font-size: 14px;    
-  color: rgba(224,224,224,0.75);    
+  color: rgba(255,255,255,0.8);    
 }    
 
 .auth-footer a:hover {    
@@ -124,14 +154,36 @@ body {
   color: #ffffff;    
 }    
 
+#registerForm input {    
+  color: #2e2a27 !important;    
+  -webkit-text-fill-color: #2e2a27 !important;    
+}    
+
 .auth-footer a {    
-  color: #8a76ff;    
+  color: #ffffff;    
+  text-decoration: none;    
+}    
+
+.auth-footer a:hover {    
+  color: #ffffff;    
+  text-decoration: underline;    
+}    
+
+.auth-footer {    
+  margin: 0;    
+  text-align: center;    
+  font-size: 15px;    
+  color: rgba(255,255,255,0.8);    
+}    
+
+.auth-footer a {    
+  color: #7c7cff;    
   text-decoration: none;    
 }    
 
 .auth-footer a:hover {    
   text-decoration: underline;    
-  color: #6b55d9;    
+  color: #6655cc;    
 }    
 
 .divider {    
@@ -140,22 +192,30 @@ body {
   text-align: center;    
   width: 100%;    
   margin: 10px 0;    
-  color: rgba(224,224,224,0.6);    
+  color: rgba(255,255,255,0.65);    
 }    
 
 .divider::before,    
 .divider::after {    
   content: '';    
   flex: 1;    
-  border-bottom: 1px solid rgba(224,224,224,0.2);    
+  border-bottom: 1px solid rgba(255,255,255,0.3);    
 }    
 
 .divider span {    
   margin: 0 10px;    
 }    
 
+.auth-footer a {    
+  color: rgba(255,255,255,0.8) !important;    
+  border-bottom: 1px solid rgba(255,255,255,0.8) !important;    
+}    
+
 input:focus::placeholder {    
   opacity: 0;    
+}    
+
+input:focus::placeholder {    
   color: transparent;    
 }    
 
