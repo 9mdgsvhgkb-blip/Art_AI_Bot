@@ -81,24 +81,31 @@ modalButton.addEventListener('click', () => {
 });
 
 // Обработчик выбора файла
+
 fileInput.addEventListener('change', () => {
   const file = fileInput.files[0];
   if (!file) return;
 
-  // Определяем, какая кнопка была открыта (по заголовку модалки)
   let endpoint = '';
-  if(modalTitle.textContent.includes('Нарезка')) {
-    endpoint = '/upload_video_full';      // полный фарш
-  } else if(modalTitle.textContent.includes('Субтитры')) {
-    endpoint = '/upload_video_subtitles'; // только субтитры
-  } else if(modalTitle.textContent.includes('Редактор')) {
-    endpoint = '/upload_video';           // только загрузка
+
+  // Если вызвано главной кнопкой или кнопкой "Нарезка клипов" → полный эндпоинт
+  if (fileInput.dataset.uploadType === 'full' || modalTitle.textContent.includes('Нарезка')) {
+    endpoint = '/upload_video_full';
+  } 
+  // Кнопка "ИИ Субтитры"
+  else if (modalTitle.textContent.includes('Субтитры')) {
+    endpoint = '/upload_video_subtitles';
+  } 
+  // Кнопка "Редактор" или другие случаи
+  else {
+    endpoint = '/upload_video';
   }
 
   uploadVideo(file, endpoint);
 
-  // Сбрасываем инпут, чтобы можно было выбрать тот же файл снова
+  // Сбрасываем инпут и удаляем dataset
   fileInput.value = '';
+  delete fileInput.dataset.uploadType;
 });
 
 // Функция загрузки
