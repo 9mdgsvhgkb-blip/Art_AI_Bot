@@ -68,7 +68,7 @@ input::placeholder {
 }
 
 .auth-container form .primary:hover {
-  background-color: #b7952d;
+  background-color: #e0e0e0;
 }
 
 #registerForm {
@@ -90,7 +90,7 @@ input::placeholder {
 }
 
 #registerForm .primary:hover {
-  background-color: #b7952d;
+  background-color: #e0e0e0;
 }
 
 img {
