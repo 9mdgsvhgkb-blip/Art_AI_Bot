@@ -16,12 +16,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
+    padding: 17px 40px;
     border-bottom: 1px solid #e5e5e5;
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 16px;
     font-weight: 700;
 }
 
@@ -32,8 +32,9 @@ body {
 }
 
 .phone {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 600;
+    white-space: nowrap;
 }
 
 .burger {
