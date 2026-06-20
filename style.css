@@ -51,40 +51,51 @@ body {
     border-radius: 3px;
 }
 
-/* Первый экран */
+.hero{
+    background:
+        linear-gradient(rgba(0,0,0,.55),
+        rgba(0,0,0,.55)),
+        url("img/demontazh.jpg");
 
-.hero {
+    background-size: cover;
+    background-position: center;
+
     text-align: center;
-    padding: 70px 20px;
+    padding: 120px 20px;
+    color: white;
 }
 
-.hero-title {
-    text-align: center;
+.hero-title{
+    font-family:'Montserrat', sans-serif;
+    text-transform: uppercase;
+    line-height: 0.95;
 }
 
-.big {
+.big{
     display: block;
-    font-size: 70px;
-    font-weight: 700;
+    font-size: 72px;
+    font-weight: 900;
+    color: #fff; /* белый */
 }
 
-.small {
+.middle{
     display: block;
-    font-size: 32px;
-    font-weight: 500;
+    margin-top: 10px;
+    font-size: 42px;
+    font-weight: 800;
+    color: #fff; /* белый */
 }
 
-.city {
+.orange{
     display: block;
-    font-size: 40px;
-    font-weight: 700;
-    color: orange; /* любой цвет */
+    margin-top: 10px;
+    font-size: 52px;
+    font-weight: 900;
+    color: #ff7a00;
 }
 
-.hero p {
-    font-size: 22px;
-    color: #555;
-    max-width: 700px;
-    margin: 0 auto;
-    line-height: 1.5;
+.hero-text{
+    margin-top: 25px;
+    font-size: 24px;
+    color: #fff;
 }
